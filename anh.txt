@@ -1,0 +1,5 @@
+trinh thi anh
+
+git add . ->post full lên staging 
+git add link -> post 1 file
+git commit -m "Anh:add new file -> đẩy lên local reponsibility
