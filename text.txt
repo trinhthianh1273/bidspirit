@@ -1,0 +1,17 @@
+git init
+=> Khởi tạo Local Repository
+git branch -M main
+=> Khởi tạo nhánh mới với tên là "main" gắn vào Working directory
+git remote add origin [url]
+=> Tạo kết nối giữa Local Repository và Remote Repository
+git pull
+=> Kéo dữ liệu từ Remote Repository về Local Repository và Working Directory
+git checkout main
+=> Mở nhánh main và bắt đầu làm việc với Git
+Để đưa 1 file mới lên thì chúng ta làm các câu lệnh sau:
+git add .
+=> Thêm toàn bộ file thay đổi vào Staging
+git commit -m "Tên người đẩy: Nội dung thay đổi"
+=> Đẩy toàn bộ file thay đổi lên Local Repository
+git push
+=> Đẩy toàn bộ nội dung lên Remote Repository
