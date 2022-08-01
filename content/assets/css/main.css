@@ -1,9 +1,45 @@
 
+body {
+    background-color: #0a1227;
+}
+
 #header {
+    
+}
+
+#header nav {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+}
+
+#logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logo img {
+    color:#fd7e14;
+}
+
+#logo h1 {
+    color:#fd7e14;
+}
+
+#nav {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#nav a {
+    font-size: 20px;
+    color:#fd7e14;
 }
 
 #header img {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
 }
