@@ -5,7 +5,7 @@ use bidspirit;
 create table admin (
     adminId varchar(255) not null primary key,
     pass varchar(255) DEFAULT NULL,
-    keypass varchar(255) DEFAULT NULL
+    keypass varchar(255) DEFAULT NULL /* dùng để mã hóa password bằng md5*/
 );
 
 INSERT INTO `admin` (`adminId`, `pass`, `keypass`) VALUES
@@ -87,7 +87,7 @@ create table products (
     updateDate varchar(255) default null,
     startDate varchar(255) default null,
     endDate varchar(255) default null,
-    status int(1) default null
+    status int(1) default null /* -1:closed, 0:live, 1:upcoming */
 );
 
 insert into products(`merchantId`, `categoryId`, `productname`, `description`, `productImage1`, `productImage2`, `productImage3`, `basePrice`, `startDate`, `endDate`, status) VALUES
@@ -129,7 +129,7 @@ create table auction (
     userId int(11) DEFAULT null,
     productId int(11) DEFAULT null,
     price int(20) DEFAULT null,
-    status int(1) default null,
+    status int(1) default null, /* 0:false, 1:success */
     auctionTime timestamp not null default current_timestamp
 );
 
