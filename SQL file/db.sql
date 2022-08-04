@@ -84,8 +84,24 @@ create table products (
     createDate timestamp not null default current_timestamp,
     updateDate varchar(255) default null,
     startDate varchar(255) default null,
-    endDate varchar(255) default null
+    endDate varchar(255) default null,
+    status int(1) default null
 );
+
+insert into products(`merchantId`, `categoryId`, `productname`, `description`, `productimage`, `basePrice`, `startDate`, `endDate`, status) VALUES
+(1, 1, 'ANTIQUE MIRROR 1', 'Ref 7991 - Antique French Mirror - Large silver on black Louis Philippe antique mirror. Finished in original two tone silver worn through to black bole in places. Original glass. New plywood back. Circa 1880. Size (inches) - 71\"h x 43\"w. Price - £1500', 'antique_mirror1.jpg,antique_mirror1.jpg,antique_mirror1.jpg,antique_mirror1.jpg,antique_mirror1.jpg', 100, '2022-08-4 0:0:0', '2022-08-10 23:59:59', 0),
+(1, 1, 'ANTIQUE MIRROR 2', 'Ref 7991 - Antique French Mirror - Large silver on black Louis Philippe antique mirror. Finished in original two tone silver worn through to black bole in places. Original glass. New plywood back. Circa 1880. Size (inches) - 71\"h x 43\"w. Price - £1500', 'antique_mirror2.jpg,antique_mirror2.jpg,antique_mirror2.jpg,antique_mirror2.jpg,antique_mirror2.jpg', 100, '2022-08-4 0:0:0', '2022-08-10 23:59:59', 0),
+(1, 2, 'ART CHAIR 1', 'The Frida lounge chair is a real eye-catcher for any terrace, designed by Vincent Sheppard, this lounge chair is a statement piece in its own right.\nWith a choice of Natural Untreated Teak or Black Teak frame.\nThe natural teak frame used outdoors will turn into a soft, silvery grey which will contrast beautifully with the anthracite acrylic rope.', 'chair1.jpg,chair1.jpg,chair1.jpg,chair1.jpg,chair1.jpg', 100, '2022-08-10 0:0:0', '2022-08-20 23:59:59', 1),
+(1, 2, 'ART CHAIR 2', 'The Frida lounge chair is a real eye-catcher for any terrace, designed by Vincent Sheppard, this lounge chair is a statement piece in its own right.\nWith a choice of Natural Untreated Teak or Black Teak frame.\nThe natural teak frame used outdoors will turn into a soft, silvery grey which will contrast beautifully with the anthracite acrylic rope.', 'chair2.jpg,chair2.jpg,chair2.jpg,chair2.jpg,chair2.jpg', 100, '2022-08-10 0:0:0', '2022-08-20 23:59:59', 1),
+(1, 2, 'ART CHAIR 3', 'The Frida lounge chair is a real eye-catcher for any terrace, designed by Vincent Sheppard, this lounge chair is a statement piece in its own right.\nWith a choice of Natural Untreated Teak or Black Teak frame.\nThe natural teak frame used outdoors will turn into a soft, silvery grey which will contrast beautifully with the anthracite acrylic rope.', 'chair3.jpg,chair3.jpg,chair3.jpg,chair3.jpg,chair3.jpg', 100, '2022-08-1 0:0:0', '2022-08-3 23:59:59', -1),
+(1, 3, 'CLASSIC SPEAKER 1', '-These gorgeous style gramophone record players are portable, require no electricity and make an impressive and memorable gift.\n-Full working order (sound quality sound) ready to play 78RPM recordings \n- Sturdy Seasonal wooden cabinet / base with authentic antique signs and Brass Horn', 'classicSpeakers1.jpg,classicSpeakers1.jpg,classicSpeakers1.jpg,classicSpeakers1.jpg,classicSpeakers1.jpg', 100, '2022-08-1 0:0:0', '2022-08-3 23:59:59', -1),
+(1, 3, 'CLASSIC SPEAKER 2', '-These gorgeous style gramophone record players are portable, require no electricity and make an impressive and memorable gift.\n-Full working order (sound quality sound) ready to play 78RPM recordings \n- Sturdy Seasonal wooden cabinet / base with authentic antique signs and Brass Horn', 'classicSpeakers2.jpg,classicSpeakers2.jpg,classicSpeakers2.jpg,classicSpeakers2.jpg,classicSpeakers2.jpg', 100, '2022-08-1 0:0:0', '2022-08-3 23:59:59', -1),
+(1, 3, 'CLASSIC SPEAKER 3', '-These gorgeous style gramophone record players are portable, require no electricity and make an impressive and memorable gift.\n-Full working order (sound quality sound) ready to play 78RPM recordings \n- Sturdy Seasonal wooden cabinet / base with authentic antique signs and Brass Horn', 'classicSpeakers3.jpg,classicSpeakers3.jpg,classicSpeakers3.jpg,classicSpeakers3.jpg,classicSpeakers3.jpg', 100, '2022-08-4 0:0:0', '2022-08-10 23:59:59', 0),
+(1, 3, 'CLASSIC SPEAKER 4', '-These gorgeous style gramophone record players are portable, require no electricity and make an impressive and memorable gift.\n-Full working order (sound quality sound) ready to play 78RPM recordings \n- Sturdy Seasonal wooden cabinet / base with authentic antique signs and Brass Horn', 'classicSpeakers4.jpg,classicSpeakers4.jpg,classicSpeakers4.jpg,classicSpeakers4.jpg,classicSpeakers4.jpg', 100, '2022-08-10 0:0:0', '2022-08-20 23:59:59', 1),
+(1, 4, 'OLD TELEPHONE 1', 'Product Name: Antique Style Wooden TelephoneModel\n Number: HS-801Place of Origin: ChinaFeatures:\n1) Real wood telephone with antique brass accent\n2) Wooden base and handset\n3) Push button dialing flat\n4) rotary way of last number redial\n5) Pulse/switchableInner packings tone: 1pc/color boxColor box dimensions: 20.0 x 18.0 x 23.0cm outer packing: 8pcs/ctnCarton dimensions: 73.5 x 23.5 x 40.5cmWeight: NW : 1.14kg/pcG.W.: 1.45kg/pcN . W.: 9.06kg/ctnG.W.: 11.60kg/ctn', 'oldtelephone1.jpg,oldtelephone1.jpg,oldtelephone1.jpg,oldtelephone1.jpg,oldtelephone1.jpg', 100, '2022-08-4 0:0:0', '2022-08-10 23:59:59', 0),
+(1, 4, 'OLD TELEPHONE 2', 'Product Name: Antique Style Wooden TelephoneModel\n Number: HS-801Place of Origin: ChinaFeatures:\n1) Real wood telephone with antique brass accent\n2) Wooden base and handset\n3) Push button dialing flat\n4) rotary way of last number redial\n5) Pulse/switchableInner packings tone: 1pc/color boxColor box dimensions: 20.0 x 18.0 x 23.0cm outer packing: 8pcs/ctnCarton dimensions: 73.5 x 23.5 x 40.5cmWeight: NW : 1.14kg/pcG.W.: 1.45kg/pcN . W.: 9.06kg/ctnG.W.: 11.60kg/ctn', 'oldtelephone2.jpg,oldtelephone2.jpg,oldtelephone2.jpg,oldtelephone2.jpg,oldtelephone2.jpg', 100, '2022-08-10 0:0:0', '2022-08-20 23:59:59', 1),
+(1, 4, 'OLD TELEPHONE 3', 'Product Name: Antique Style Wooden TelephoneModel\n Number: HS-801Place of Origin: ChinaFeatures:\n1) Real wood telephone with antique brass accent\n2) Wooden base and handset\n3) Push button dialing flat\n4) rotary way of last number redial\n5) Pulse/switchableInner packings tone: 1pc/color boxColor box dimensions: 20.0 x 18.0 x 23.0cm outer packing: 8pcs/ctnCarton dimensions: 73.5 x 23.5 x 40.5cmWeight: NW : 1.14kg/pcG.W.: 1.45kg/pcN . W.: 9.06kg/ctnG.W.: 11.60kg/ctn', 'oldtelephone3.jpg,oldtelephone3.jpg,oldtelephone3.jpg,oldtelephone3.jpg,oldtelephone3.jpg', 100, '2022-08-1 0:0:0', '2022-08-3 23:59:59', -1);
+
 
 create table category (
 	categoryId int(11)  not null primary key AUTO_INCREMENT,
@@ -93,6 +109,13 @@ create table category (
     createDate timestamp not null default current_timestamp,
     updateDate varchar(255) default null
 );
+
+insert into `category` (`categoryname`) VALUES
+ ('mirror'),
+ ('chair'),
+ ('speaker'),
+ ('telephone');
+
 
 alter table products 
 add FOREIGN KEY (merchantId) references merchants(merchantId);
@@ -111,6 +134,12 @@ create table auction (
 alter table auction
 add FOREIGN KEY (userId) references users(userId),
 add FOREIGN KEY (productId) references products(productId);
+
+insert into auction (`userId`, `productId`, `price`, `status`) VALUES
+(1, 5, 200, 1),
+(1, 6, 500, 1),
+(1, 7, 250, 1),
+(1, 12, 300, 1);
 
 
 
