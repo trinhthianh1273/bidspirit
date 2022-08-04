@@ -1,17 +1,23 @@
-/*
-var app =  angular.module('main-App',['ngRoute']);
-app.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider.
-	        when('/', {
-	            templateUrl: 'views/posts.html',
-	            controller: 'PostController'
-	        }).
-            when('/user', {
-	            templateUrl: 'views/users.html',
-	            controller: 'UserController'
-	        });
-}]);
-*/
-//http://localhost:8084/#/
-//http://localhost:8084/#/user
+var app = angular.module('my-App', ['ngRoute']);
+
+app.config(function($routeProvider){
+	$routeProvider.when('/', {
+        templateUrl: "./views/home.html",
+        controller: 'homeController'
+    })
+    .when('/login', {
+        templateUrl: "./views/login.php",
+        controller: 'userLogin'
+    })
+    .when('/register', {
+        templateUrl: "./views/register.php",
+        controller: 'userRegister'
+    })
+    .when('/admin', {
+        templateUrl: "./admin/login.php",
+        controller: 'admin'
+    })
+    .otherwise({
+        templateUrl: '404'
+    })
+});

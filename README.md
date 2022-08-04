@@ -1,6 +1,14 @@
 # C2112L_Group1 - Test
 
+Login:
+user_email: 'phungbaokimanh@gmail.com',
+user_pass: 'User@123'
 
+merchant_email: 'phungbaokimanh@gmail.com',
+merchant_pass: 'Merchant@123'
+
+admin: 'phungbaokimanh@gmail.com',
+pass: 'Test@123'
 
 ## Getting started
 

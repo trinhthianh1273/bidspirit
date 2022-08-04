@@ -24,7 +24,7 @@
 <body ng-app="my-App">
     <?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/header.html"; ?>
     <div class="container">
-        <ng-view>
+        <ng-view id="mainContent">
             
         </ng-view>
     </div>
