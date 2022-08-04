@@ -7,7 +7,7 @@ user_pass: 'User@123'
 merchant_email: 'phungbaokimanh@gmail.com',
 merchant_pass: 'Merchant@123'
 
-admin: 'phungbaokimanh@gmail.com',
+admin: 'admin',
 pass: 'Test@123'
 
 ## Getting started
