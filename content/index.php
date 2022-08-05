@@ -22,13 +22,13 @@
 	<script src="app/helper/myHelper.js"></script>
 </head>
 <body ng-app="my-App">
-    <?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/header.html"; ?>
+    <?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/header.php"; ?>
     <div class="container">
         <ng-view id="mainContent">
             
         </ng-view>
     </div>
 
-    <?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/footer.html"; ?>
+    <?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/footer.php"; ?>
 </body>
 </html>

@@ -2,7 +2,7 @@ var app = angular.module('my-App', ['ngRoute']);
 
 app.config(function($routeProvider){
 	$routeProvider.when('/', {
-        templateUrl: "./views/home.html",
+        templateUrl: "./views/home.php",
         controller: 'homeController'
     })
     .when('/login', {
