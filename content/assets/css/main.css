@@ -3,6 +3,10 @@
     z-index: 0;
 }
 
+a::hover {
+    text-decoration: none;
+}
+
 body {
     background-color: #0a1227;
 }
@@ -49,5 +53,22 @@ body {
 }
 
 .account-dropdown {
-    
+    position: relative;
+    display: inline-block;
+}
+
+.account-dropdown-label:hover, account-dropdown-label:focus {
+    .account-dropdown-content {
+        
+    }
+}
+
+.account-dropdown-content {
+    display: none;
+    position: absolute;
+}
+
+.account-dropdown-content a {
+    padding: 12px 16px;
+    display: block;
 }
