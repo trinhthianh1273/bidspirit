@@ -12,7 +12,13 @@
             <a href="">Live Auction</a>
             <a href="">Blog</a>
             <a href="">Contact</a>
-            <a href="">Account</a>
+            <div class="account-dropdown">
+                <a class=" href="">Account</a>
+                <div class="account-dropdown-content">
+                    <a href="">Login</a>
+                    <a href="">Register</a>
+                </div>
+            </div>
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
     </nav>
