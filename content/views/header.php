@@ -15,7 +15,7 @@
             <div class="account-dropdown">
                 <a class=" href="">Account</a>
                 <div class="account-dropdown-content">
-                    <a href="">Login</a>
+                    <a href="/content/views/login.php">Login</a>
                     <a href="">Register</a>
                 </div>
             </div>
