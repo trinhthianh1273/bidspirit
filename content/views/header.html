@@ -1,25 +1,40 @@
-<div id="header" ng-controller="HeaderController">
-    <nav>
-        <div id="logo">
-            <img src="./assets/img/hammerIcon.png" alt="">
-            <h1>BidSpirit</h1>
+<div class="row align-items-center" id="row-head" style="height:50px;">
+    <div class="col-2 ms-3">
+        <i class="fa-regular fa-envelope"></i>
+        <span>Email: abc@gmail.com</span>
+    </div>
+
+    <div class="col-2">
+        <i class="fa-solid fa-phone-flip"></i>
+        <span>Call Us: 123456789</span>
+    </div>
+
+    <div class="col-1 ms-auto text-center" style="background-color: rgb(247, 74, 5);height: inherit;">
+        <i class="fa-regular fa-circle-user" style="color:white;"></i>
+        <a href=""  style="color:white;">Register</a>
+    </div>
+
+    <div class="col-1" style="border:none;"></div>
+</div>
+
+
+<div class="row align-items-center text-center" id="header" ng-controller="HeaderController" style="background-color: black">
+    <div class="col offset-md-1 d-flex align-items-center" id="logo">
+        <img src="./assets/img/hammerIcon.png" alt="">
+        <h1>BidSpirit</h1>
+    </div>
+
+    <div class="col-1 d-none d-md-block offset-md-1 col-sm-0"><a href="">Home</a></div>
+    <div class="col-1 d-none d-md-block"><a href="">About</a></div>
+    <div class="col-1 d-none d-md-block"><a href="">Category</a></div>
+    <div class="col-1"><a href="">Live Auction</a></div>
+    <div class="col-1 d-none d-md-block"><a href="">Contact</a></div>
+    <div class="col-1">
+        <div class="account-dropdown">
+            <a class="account-dropdown-label" href="">Account</a>
         </div>
-        <div id="nav">
-            <a href="">Home</a>
-            <a href="">About</a>
-            <a href="">Faq</a>
-            <a href="">Category</a>
-            <a href="">Live Auction</a>
-            <a href="">Blog</a>
-            <a href="">Contact</a>
-            <div class="account-dropdown">
-                <a class="account-dropdown-label" href="">Account</a>
-                <div class="account-dropdown-content">
-                    <a href="">Login</a>
-                    <a href="">Register</a>
-                </div>
-            </div>
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-    </nav>
+    </div>
+    
+    <div class="col text-start"><i class="fa-solid fa-magnifying-glass"></i></div>
+    
 </div>
