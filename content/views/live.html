@@ -1,1 +1,40 @@
-<h2>Live Auction</h2>
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/boostrap.min.css">
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/angular.min.js"></script>
+	<script src="../assets/js/angular-route.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../app/controllers/live.js"></script>
+	
+</head>
+<style>
+    table {
+        border: 1px solid black;
+    }
+    
+</style>
+<div ng-app="live" ng-controller="liveController">
+    <h2 class="text-center">Live Auction</h2>  
+    <div class="row text-center justify-content-around">
+            <table class="col-2" ng-repeat="live in liveauction">
+                <thead style="height: 100%;">
+                    <tr><th>{{live.productname}}</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="col"><img src="../assets/img/{{live.productImage1}}" alt="" class="img-fluid" style="max-width: 70%;max-height: 70%;" ></td></tr>
+                    <tr class="row ms-0 align-items-center" style="max-width: 100%;">
+                        <td class="col">{{live.basePrice}}</td>
+                        <td class="col">{{live.endDate}}</td>
+                    </tr>
+                    <tr><td><button>bid now </button></td></tr>
+                </tbody>
+            </table>
+    </div> 
+</div>

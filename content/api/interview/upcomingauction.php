@@ -9,7 +9,7 @@ $result = $mysqli->query($sql);
 while($row = $result->fetch_assoc()) {
     $json[] = $row;
 }
-$data['upcommingauction'] = $json;
+$data['upcomingauction'] = $json;
 echo json_encode($data);
 
 
