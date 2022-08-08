@@ -27,9 +27,9 @@
     <h2 class="text-center">Auction</h2>
 
     
-        <ng-view id="mainContent">
+        <div ng-view id="mainContent">
             
-        </ng-view>
+        </div>
     </div>
 
     <?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/footer.html"; ?>
