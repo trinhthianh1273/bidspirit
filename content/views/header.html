@@ -1,5 +1,5 @@
 
-<div class="row align-items-center" id="row-head" style="height:50px;">
+<div class="row align-items-center" id="row-head" style="height:50px;border-bottom: 1px solid #282853;">
     <div class="col-2 ms-3">
         <i class="fa-regular fa-envelope"></i>
         <span>Email: abc@gmail.com</span>
@@ -19,9 +19,9 @@
 </div>
 
 
-<div class="row align-items-center text-center" id="header" ng-controller="HeaderController" style="background-color: black">
+<div class="row align-items-center text-center" id="header" ng-controller="HeaderController" style="background-color: #0a1227;border-bottom: 1px solid #282853;">
     <div class="col offset-md-1 d-flex align-items-center" id="logo">
-        <img src="./assets/img/hammerIcon.png" alt="">
+        <img src="./assets/img/hammerIcon.jpg" alt="">
         <h1>BidSpirit</h1>
     </div>
 
@@ -30,10 +30,20 @@
     <div class="col-1 d-none d-md-block"><a href="">Category</a></div>
     <div class="col-1"><a href="">Live Auction</a></div>
     <div class="col-1 d-none d-md-block"><a href="">Contact</a></div>
-    <div class="col-1">
-        <div class="account-dropdown">
-            <a class="account-dropdown-label" href="">Account</a>
-        </div>
+        <!-- <div class="col-1">
+            <div class="account-dropdown">
+                <a class="account-dropdown-label" href="">Account</a>
+            </div>
+        </div> -->
+    <div class="col-1 dropdown">
+        <a class="btn dropdown-toggle" href="#" role="button" id="account" data-bs-toggle="dropdown" aria-expanded="false">
+          Account
+        </a>
+      
+        <ul class="dropdown-menu" aria-labelledby="account">
+          <li><a class="dropdown-item" href="#">Login</a></li>
+          <li><a class="dropdown-item" href="#">Register</a></li>
+        </ul>
     </div>
     
     <div class="col text-start"><i class="fa-solid fa-magnifying-glass"></i></div>

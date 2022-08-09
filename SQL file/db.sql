@@ -174,3 +174,9 @@ insert into orderauction(userId,productId,price, status) VALUES
 (1, 6, 500, 1),
 (1, 7, 250, 1),
 (1, 12, 300, 1);
+
+insert into tracking(orderId, tracking, remark) VALUES
+(1,'in Process','Order has been Shipped'),
+(2,'Delivered','Order Has been delivered'),
+(3,'Delivered','Product delivered successfully'),
+(4,'in Process','Product ready for Shipping');

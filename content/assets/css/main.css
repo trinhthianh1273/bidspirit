@@ -18,13 +18,13 @@ body {
     color:white
 }
 
-[class*="col"] {  
+/* [class*="col"] {  
     border: 1px solid black;
 }
 
 [class*="row"] {
     border: 1px solid black;
-}
+} */
 
 #row-head i {
     color:var(--orange-c);
