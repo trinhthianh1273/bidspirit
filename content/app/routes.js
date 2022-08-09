@@ -1,23 +1,30 @@
-var app = angular.module('my-App', ['ngRoute']);
+var app = angular.module("my-App", ["ngRoute"]);
 
-app.config(function($routeProvider){
-	$routeProvider.when('/', {
-        templateUrl: "./views/home.php",
-        controller: 'homeController'
-    })
-    .when('/login', {
-        templateUrl: "./views/login.php",
-        controller: 'userLogin'
-    })
-    .when('/register', {
-        templateUrl: "./views/register.php",
-        controller: 'userRegister'
-    })
-    .when('/admin', {
-        templateUrl: "./admin/login.php",
-        controller: 'admin'
-    })
-    .otherwise({
-        templateUrl: '404'
-    })
-});
+// appModule.config(['$locationProvider', function($locationProvider) {
+//     $locationProvider.hashPrefix('');
+//   }]);
+
+app.controller('myCtrl',  ['$scope', function($scope) { }]);
+app.config(['$routeProvider',,
+    function($routeProvider){
+        $routeProvider.
+        when('!/', {
+            templateUrl: "views/home.html",
+            controller: 'homeController'
+        }).
+        when('/login', {
+            templateUrl: "views/login.html",
+            controller: 'userLogin'
+        }).
+        when('/register', {
+            templateUrl: "views/register.html",
+            controller: 'userRegister'
+        }).
+        when('/admin', {
+            templateUrl: "admin/login.html",
+            controller: 'admin'
+        }).
+        otherwise({
+            templateUrl: 'views/home.html'
+        });
+    }]);
