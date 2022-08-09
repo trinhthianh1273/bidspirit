@@ -3,9 +3,9 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Group1/content/DB_config.php';
 $sqlTA = "SELECT COUNT(auctionId) as totaltauction FROM auction;";
-$sqlRA = "SELECT COUNT(productId) as runningtuction FROM products
+$sqlRA = "SELECT COUNT(productId) as runningtauction FROM products
             WHERE status = 0 or status = 1;";
-$sqlWM = "SELECT COUNT(DISTINCT userId) as winnerauction FROM orderauction;";
+$sqlWM = "SELECT COUNT(DISTINCT userId) as winnermember FROM orderauction;";
 
 $resultTA = $mysqli->query($sqlTA);
 $resultRA = $mysqli->query($sqlRA);
