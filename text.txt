@@ -15,3 +15,5 @@ git commit -m "Tên người đẩy: Nội dung thay đổi"
 => Đẩy toàn bộ file thay đổi lên Local Repository
 git push
 => Đẩy toàn bộ nội dung lên Remote Repository
+
+<?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/header.html";?>

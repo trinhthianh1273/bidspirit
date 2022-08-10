@@ -4,11 +4,11 @@ var app = angular.module("my-App", ["ngRoute"]);
 //     $locationProvider.hashPrefix('');
 //   }]);
 
-app.controller('myCtrl',  ['$scope', function($scope) { }]);
-app.config(['$routeProvider',,
+// app.controller('myCtrl',  ['$scope', function($scope) { }]);
+app.config(['$routeProvider',
     function($routeProvider){
         $routeProvider.
-        when('!/', {
+        when('/', {
             templateUrl: "views/home.html",
             controller: 'homeController'
         }).

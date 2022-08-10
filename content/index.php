@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="./assets/css/main.css">
 
     <!-- Script Library -->
-	<script src="./assets/js/jquery.min.js"></script>
-	<script src="./assets/js/bootstrap.min.js"></script>
-	<script src="./assets/js/angular.min.js"></script>
-    <script src="./assets/js/angular-route.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+    <script src="assets/js/angular-route.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -25,13 +26,17 @@
     <script src="../app/controllers/footer.js"></script>
 </head>
 
-<body ng-app="my-App" ng-controller="myCtrl" class="container-fluid">
+<body>
 
     <?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/header.html";?>
     <h2 class="text-center">Auction</h2>
-        <div ng-view></div>
+        
+    <div ng-app="my-App">
+        <ng-view>
+
+        </ng-view>
     </div>
 
-    <div ng-include=" 'C:\xampp\htdocs\group1\content\views\footer.html' "></div>
+    <?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/footer.html";?>
 </body>
 </html>

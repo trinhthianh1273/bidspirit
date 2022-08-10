@@ -7,6 +7,7 @@ $sql = "SELECT productId, merchantId, productname,description, productImage1, pr
         inner join category on products.categoryId = category.categoryId
         WHERE status = 0";
 $result = $mysqli->query($sql);
+
 while($row = $result->fetch_assoc()) {
     $json[] = $row;
 }
