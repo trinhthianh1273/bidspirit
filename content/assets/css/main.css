@@ -6,6 +6,16 @@
 :root {
     --orange-c: rgb(247, 74, 5);
     --extra-c: rgb(162, 174, 194);
+    --extra-ac: #a2aec2;
+    --body-c: #0a1227;
+    --step-c: #0f1932;
+    --border-bc: #282853;
+    --font-f: 'Arvo', serif;
+
+}
+
+h1, h2 {
+    font-family: var(--font-f);
 }
 
 a::hover {
@@ -14,7 +24,7 @@ a::hover {
 
 body {
     /* background-color: #0a1227; */
-    background-color: #0a1227;
+    background-color: var(--body-c);
     color:white
 }
 
@@ -40,15 +50,14 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: #f6a15c;
+    color: var(--orange-c);
+    transition: 0.8s;
 }
+
 
 #header a {
     font-size: 18px;
 }
-
-
-
 
 #logo img {
     width: 40%;
@@ -62,3 +71,146 @@ a:hover {
 
 
 
+/* ------- DROPDOWN ACCOUNT --------------- */
+.dropdown a {
+    color: var(--extra-ac);
+}
+
+.dropdown-menu {
+    color: var(--extra-ac);
+    background-color: var(--body-c);
+}
+
+
+
+.footer {
+    
+}
+
+.footer p,a,span {
+    color: var(--extra-ac);
+}
+
+.footer a:hover {
+    color: var(--orange-c);
+    transition: 0.8s;
+}
+
+.footer i {
+    color:var(--orange-c);
+}
+
+.footer .step {
+    background-color: var(--step-c);
+    border: 1px solid rgba(247, 74, 5, .5);
+    border-radius: 5px;   
+}
+
+.title-main thead {
+    background-color: var(--body-c);
+}
+
+table {
+    border-radius: 30px;
+}
+
+/*  LIVE AUCTION  */
+
+.live, .upcoming, .closed {
+    background-color: var(--step-c);
+    border-bottom: 1px solid var(--border-bc);
+}
+
+.live table {
+    /* background-color: var(--body-c); */
+    border: 1px solid rgba(247, 74, 5, .5);
+    border-radius: 50%;
+}
+
+.upcoming table {
+    border: 1px solid rgba(247, 74, 5, .5);
+    border-radius: 50%;
+}
+
+.closed table {
+    border: 1px solid rgba(247, 74, 5, .5);
+    border-radius: 50%;
+}
+
+.live .btn {
+    padding: 8px 20px;
+    border: 1px solid #f74a05;
+    background-color: #f74a05;
+    border-radius: 30px;
+    transition: all .4s;
+    overflow: hidden;
+}
+
+.hero-content-area .btn-default {
+    border: 1px solid #f74a05;
+    background-color: #f74a05;
+}
+
+.btn {
+    font-family: "Rubik", sans-serif;
+}
+
+.hero-content-area {
+    border-bottom: 1px solid var(--border-bc);
+}
+
+
+.hero-content-area p {
+    color: var(--extra-c);
+}
+
+.btn-default {
+    color: white;
+    background-color: var(--orange-c);
+    padding: 12px 30px;
+    border-radius: 30px;
+}
+
+.btn-default:hover {
+    background-color: var(--body-c);
+    border: 1px solid var(--border-bc);
+    transition: 0.6s;
+}
+
+.title-form {
+    width: 100%;
+    height: 40vh;
+    background-color: var(--step-c);
+}
+
+.login-page h4 {
+    color: var(--orange-c);    
+}
+
+.login-page .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page .form-group label {
+    color: var(--extra-ac);
+}
+
+.login-page .form-group input {
+    border: 1px solid var(--border-bc);
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    padding: 5px 15px;
+    vertical-align: baseline;
+    overflow: visible;
+}
+
+.login-page .form-group input:focus-within {
+    border: 1px solid var(--orange-c);
+    transition: 0.7s;
+}
+
+.remember-and-password {
+
+}

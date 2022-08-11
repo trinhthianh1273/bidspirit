@@ -1,7 +1,5 @@
-var URL = "http://localhost/group1/content/";
 
-var footer = angular.module('footer', ['ngRoute']);
-footer.controller('footerController', function($scope,$http){
+app.controller('footerController', function($scope,$http){
     $scope.strategy = [];
     strategy();
     function strategy() {

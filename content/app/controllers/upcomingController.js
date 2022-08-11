@@ -1,6 +1,5 @@
-var URL = "http://localhost/group1/content/";
 
-var app = angular.module('upcoming', ['ngRoute']);
+
 app.controller('upcomingController', function($scope,$http){
     $scope.upcomingauction = [];
     upcomingauction();

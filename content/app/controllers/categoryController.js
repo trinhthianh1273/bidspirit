@@ -1,6 +1,5 @@
-var URL = "http://localhost/group1/content/";
 
-var app = angular.module('category', ['ngRoute']);
+
 app.controller('categoryController', function($scope,$http){
     $scope.category = [];
     category();

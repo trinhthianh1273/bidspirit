@@ -22,3 +22,8 @@
 i {
     color:var(--orange-c);
 }
+
+.footer {
+    font-family: "Rubik", sans-serif;
+    color: #a2aec2;
+}

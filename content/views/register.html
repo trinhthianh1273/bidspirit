@@ -1,3 +1,77 @@
-<form action="">
-    <h1>Register</h1>
-</form>
+<div ng-controller="loginController" class="login-page">
+
+    <!-- LOGIN TITLE -->
+    <div class="row mb-5 text-center align-items-center title-form">
+      <h2>Register</h2>
+    </div>
+  
+  
+  
+    <div class="container">
+      <!-- LOGIN FORM -->
+      <div class="row align-items-center py-5">
+        <div class="col-lg-6">
+          <img src="assets/img/menwork.png" style="max-width: 100%;" alt="">
+        </div>
+  
+  
+        <div class="col-lg-6" style="max-width: 50%;">
+  
+          <!-- LABEL -->
+          <div class="form-header">
+            <h4>Register in here</h4>
+            <h2>Welcome To BidLab</h2>
+          </div>
+  
+          <!-- FORM -->
+          <form action="" method="post">
+  
+            <!-- EMAIL -->
+            <div class="form-group mb-3">
+              <label for="email"><strong>Email</strong></label>
+              <input type="text" id="email" name="email" value="" placeholder="Enter Your Email" class="form-controller"
+                required>
+            </div>
+  
+            <!-- PASS -->
+            <div class="form-group mb-3">
+              <label for="password"><strong>Password</strong></label>
+              <input id="password" type="password" class="form-controller" name="password" autocomplete="current-password"
+                placeholder="Enter Your Password" required>
+            </div>
+  
+            <!-- REMEMBER  -->
+            <div class="row remember-and-password my-3">
+              <div class="col login-form-remember">
+                <label for="remembermelogin">
+                  <input id="remembermelogin" name="remember" type="checkbox"><span> RememberMe</span>
+                </label>
+              </div>
+  
+              <!-- FORGOT -->
+              <div class="col forget-pass text-end">
+                <a class="btn-password" href="#">Forget Password?</a>
+              </div>
+            </div>
+            <!--/.remember-and-password-->
+  
+            <!-- LOGIN BUTTON -->
+            <div class="row form-btn-group align-items-center justify-content-start">
+              <div class="col-auto form-login-area">
+                <button type="submit" id="recaptcha" class="btn btn-default">
+                  Login </button>
+              </div>
+  
+              <!-- OTHER -->
+              <div class="col login-form-register-now">
+                You have no account? <a class="btn-register-now"
+                  href="https://script.viserlab.com/bidlab/register">Register</a>
+              </div>
+            </div>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+    <div class="my-5" style="border-bottom: 3px solid #f74a05;"></div>
+  </div>

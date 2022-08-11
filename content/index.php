@@ -4,39 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BidSpirit</title>
+    <title>Document</title>
 
-    <link rel="stylesheet" href="./assets/css/boostrap.min.css">
+    <link rel="stylesheet" href="assets/css/boostrap.min.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/main.css">
-
-    <!-- Script Library -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/angular.min.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
-    <script src="assets/js/angular-route.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	<!-- My App -->
-	<script src="app/routes.js"></script>
-	<script src="app/helper/myHelper.js"></script>
 
-    <script src="../app/controllers/footer.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-sH8JPhKJUeA9PWk3eOcOl8U+lfZTgtBXD41q6cO/slwxGHCxKcW45K4oPCUhHG7NMB4mbKEddVmPuTXtpbCbFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Signika+Negative&display=swap" rel="stylesheet">
+
+    <!-- APP Controller -->
+    <script src="app/routes.js"></script>
+    <script src="app/helper/myHelper.js"></script>
+
+    
+    <script src="app/controllers/homeController.js "></script>
+    <script src="app/controllers/headerController.js "></script>
+    <script src="app/controllers/footerController.js "></script>
+    <script src="app/controllers/liveController.js "></script>
+    <script src="app/controllers/upcomingController.js "></script>
+    <script src="app/controllers/closedController.js "></script>
+    <script src="app/controllers/loginController.js "></script>
+    <script src="app/controllers/registerController.js "></script>
+    <script src="app/controllers/categoryController.js "></script>
 </head>
+<body ng-app="myApp">
 
-<body>
+    <div ng-include="'views/header.html'"></div>
 
-    <?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/header.html";?>
-    <h2 class="text-center">Auction</h2>
-        
-    <div ng-app="my-App">
-        <ng-view>
+    <ng-view></ng-view>
 
-        </ng-view>
-    </div>
-
-    <?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/footer.html";?>
+    <div ng-include="'views/footer.html'"></div>
 </body>
 </html>

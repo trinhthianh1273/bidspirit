@@ -1,1 +1,25 @@
-<h1 class="text-center">Anh</h1>
+<div ng-controller="homeController">
+
+<!-- Auction Title -->
+
+<div class="hero-content-area text-center ptb-120 py-5" >
+    <div class="hero-title-area">
+        <h2 class="hero-title my-5" style="color:white; font-size:48px;">Auction</h2>
+    </div>
+
+    <div class="hero-desc mx-auto col-6 text-center pb-5">
+        <p>Our greatest asset is the reputation we have built over the years in terms of reliability, integrity, transparency, trust, and excellence in the auctioning services</p>
+    </div>
+
+    <div class="form-group-btn pb-5">
+        <a class="btn btn-default" href="about">Learn More</a>
+        <a class="btn btn-default btn-white" href="contact">Contact Us</a>
+    </div>
+</div>
+
+<div ng-include="'views/live.html'"></div>
+<div ng-include="'views/upcoming.html'"></div>
+<div ng-include="'views/closed.html'"></div>
+
+
+</div>
