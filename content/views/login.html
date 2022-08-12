@@ -1,4 +1,4 @@
-<div ng-controller="loginController" class="login-page">
+<div ng-controller="loginController" class="user-page">
 
   <!-- LOGIN TITLE -->
   <div class="row mb-5 text-center align-items-center title-form">
@@ -24,12 +24,12 @@
         </div>
 
         <!-- FORM -->
-        <form action="" method="post">
+        <form action="api/user/login.php" method="post">
 
           <!-- EMAIL -->
           <div class="form-group mb-3">
             <label for="email"><strong>Email</strong></label>
-            <input type="text" id="email" name="email" value="" placeholder="Enter Your Email" class="form-controller"
+            <input type="email" id="email" name="email" value="" placeholder="Enter Your Email" class="form-controller"
               required>
           </div>
 
@@ -65,7 +65,7 @@
             <!-- OTHER -->
             <div class="col login-form-register-now">
               You have no account? <a class="btn-register-now"
-                href="https://script.viserlab.com/bidlab/register">Register</a>
+                href="#!/register">Register</a>
             </div>
           </div>
         </form>

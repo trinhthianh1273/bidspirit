@@ -1,30 +1,38 @@
-var dashboard = angular.moduel('dashboard', ['ngRoute']);
+var URL = "http://localhost/group1/content/";
 
-dashboard.config(['$routeProvider',
-    function($routeProvider){
-        $routeProvider.
+var app = angular.module('myApp', ['ngRoute']);
+
+app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider. 
         when('/', {
-            templateUrl: "views/changepassword.html",
+            templateUrl: 'views/changepassword.html',
             controller: 'changepasswordController'
-        }).
-        when('/category', {
-            templateUrl: "views/createcategory.html",
-            controller: 'categoryController'
-        }).
-        when('/order', {
-            templateUrl: "views/ordermanagement.html",
-            controller: 'ordermanagementController'
-        }).
-        when('/merhchant', {
-            templateUrl: "views/managemerchant.html",
-            controller: 'managemerchantController'
-        }).
-        when('/insertproduct', {
-            templateUrl: "views/insertproduct.html",
-            controller: 'insertproductController'
-        }).
-        when('/manageproduct', {
-            templateUrl: "views/manageproduct.html",
-            controller: 'manageproductController'
         })
-    }]);
+        .when('/order', {
+            templateUrl: 'views/order.html',
+            controller: 'orderController'
+        })
+        .when('/user', {
+            templateUrl: 'views/user.html',
+            controller: 'userController'
+        }).
+        when('/merchant', {
+            templateUrl: 'views/merchant.html',
+            controller: 'merchantController'
+        }). 
+        when('/category', {
+            templateUrl: 'views/category.html',
+            controller: 'categoryController'
+        }). 
+        when('/insert', {
+            templateUrl: 'views/insert.html',
+            controller: 'insertController'
+        }). 
+        when('/product', {
+            templateUrl: 'views/product.html',
+            controller: 'productController'
+        }). 
+        otherwise({
+            templateUrl: 'views/changepassword.html'
+        });
+}]);

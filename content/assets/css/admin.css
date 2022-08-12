@@ -1,0 +1,37 @@
+
+:root {
+    --orange-c: rgb(247, 74, 5);
+    --extra-c: rgb(162, 174, 194);
+    --extra-ac: #a2aec2;
+    --body-c: #0a1227;
+    --step-c: #0f1932;
+    --border-bc: #282853;
+    --font-f: 'Arvo', serif;
+
+}
+
+a {
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+}
+.work {
+    background-color: #2d2b32;
+    color: #767676;
+}
+.work:hover {
+    color: white;
+    transition: 0.5s;
+}
+.work a {
+    color: #767676;
+}
+.work a:hover {
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    color: var(--orange-c)
+}

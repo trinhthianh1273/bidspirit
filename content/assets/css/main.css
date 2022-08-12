@@ -68,8 +68,19 @@ a:hover {
 #logo h1 {
     color:var(--orange-c);
 }
+.contact i {
+    padding: 1rem; 
+        border: 1px solid; 
+        background-color:#0f1932;
+        border-radius:50%;
+        color:#f74a05;
+}
 
-
+.contact .col-3 {
+    background-color: #0f1932;
+    color: #a2aec2;
+    border-radius: 7px;
+}
 
 /* ------- DROPDOWN ACCOUNT --------------- */
 .dropdown a {
@@ -183,20 +194,21 @@ table {
     background-color: var(--step-c);
 }
 
-.login-page h4 {
+.user-page h4 {
     color: var(--orange-c);    
 }
 
-.login-page .form-group {
+.user-page .form-group {
     display: flex;
     flex-direction: column;
 }
 
-.login-page .form-group label {
+.user-page .form-group label {
     color: var(--extra-ac);
 }
 
-.login-page .form-group input {
+.user-page .form-group input {
+    color: white;
     border: 1px solid var(--border-bc);
     background-color: transparent;
     width: 100%;
@@ -206,9 +218,10 @@ table {
     overflow: visible;
 }
 
-.login-page .form-group input:focus-within {
+.user-page .form-group input:focus-within {
     border: 1px solid var(--orange-c);
     transition: 0.7s;
+    color: white;
 }
 
 .remember-and-password {
