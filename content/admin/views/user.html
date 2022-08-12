@@ -20,17 +20,17 @@
             <td>{{user.phone}}</td>
             <td>{{user.address}}, {{user.commune}}, {{user.district}}, {{user.province}}</td>
             <td>
-              <button data-bs-toggle="modal" data-bs-target="#editUser"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button ng-click="edit(user.userId)" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fa-solid fa-pen-to-square"></i></button>
               <button ng-click="remove(user,$index)"><i class="fa-regular fa-circle-xmark"></i></button>
             </td>
           </tr>
         </tbody>
       </table>
 
-      <div class="modal fade my-auto" id="editUser">
+      <div class="modal fade" id="editUser">
         <div class="modal-dialog">
             <div class="modal-content">
-
+              <form action="" class="row" role="form" name="editUser" method="post" ng-submit="">
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Change User Information</h4>
@@ -38,15 +38,65 @@
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body">
-                    <input type="text">
+                <div class="modal-body row mx-auto">
+                    <!-- USER NAME -->
+                    <div class="form-group mb-3">
+                      <label for=username"><strong>User Name</strong></label>
+                      <input type="text" ng-model="form.username" id="username" name="username" value="" placeholder="Enter Your Username"
+                          class="form-controller" required>
+                  </div>
+
+                  <!-- EMAIL -->
+                  <div class="form-group mb-3">
+                      <label for="email"><strong>Email</strong></label>
+                      <input type="email" id="email" name="email" value="" placeholder="Enter Your Email"
+                          class="form-controller" required>
+                  </div>
+
+                  <!-- PHONE -->
+                  <div class="form-group mb-3">
+                      <label for="phone"><strong>Phone</strong></label>
+                      <input id="phone" type="text" class="form-controller" name="phone" placeholder="Enter Your Phone" pattern="/^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/" required>
+                  </div>
+
+                  <!-- PASS -->
+                  <div class="form-group mb-3">
+                      <div>
+                          <label for="Cpassword"><strong>Zip Code</strong></label>
+                          <input id="Cpassword" type="password" class="form-controller" name="Cpassword"
+                              placeholder="Enter Your Password" required>
+                      </div>
+                  </div>
+                  
+                  <div class="col-6 form-group mb-3">
+                      <label for="province"><strong>Province</strong></label>
+                      <input id="province" type="text" class="form-controller" name="province"
+                          placeholder="province" required>
+                  </div>
+                  <div class="col-6 form-group mb-3">
+                      <label for="district"><strong>District</strong></label>
+                      <input id="district" type="text" class="form-controller" name="district"
+                          placeholder="district" required>
+                  </div>
+              
+                  <div class="col-6 form-group mb-3">
+                      <label for="commune"><strong>Commune</strong></label>
+                      <input id="commune" type="text" class="form-controller" name="commune"
+                          placeholder="commune" required>
+                      </div>
+                  <div class="col-6 form-group mb-3">
+                      <label for="address"><strong>Address</strong></label>
+                      <input id="address" type="text" class="form-controller" name="address"
+                          placeholder="address">
+                  </div>
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">OK</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
                 </div>
+              </form>
             </div>
         </div>
     </div>

@@ -35,3 +35,41 @@ a:hover {
 button:hover {
     color: var(--orange-c)
 }
+
+/* .modal-dialog {
+    background-color: transparent;
+} */
+
+.modal-dialog .modal-content {
+    background-color: white;
+}
+
+.modal h4 {
+    color: black;    
+}
+
+.modal .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal .form-group label {
+    color: var(--extra-ac);
+}
+
+.modal .form-group input {
+    color: black;
+    border: 1px solid var(--border-bc);
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    padding: 5px 15px;
+    vertical-align: baseline;
+    overflow: visible;
+}
+
+.modal .form-group input:focus-within {
+    border: 1px solid var(--orange-c);
+    transition: 0.7s;
+    color: white;
+}

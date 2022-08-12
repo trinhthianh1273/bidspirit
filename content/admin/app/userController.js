@@ -17,6 +17,7 @@ app.controller('userController', function($scope, $http){
         method: 'GET'
       }).then(function(data){
         $scope.form = data.data;
+        console.log($scope.form);
       });
     }
 
