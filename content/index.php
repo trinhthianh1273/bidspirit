@@ -44,5 +44,7 @@
     <ng-view></ng-view>
 
     <div ng-include="'views/footer.html'"></div>
+
+
 </body>
 </html>

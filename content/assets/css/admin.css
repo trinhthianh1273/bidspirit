@@ -7,7 +7,7 @@
     --step-c: #0f1932;
     --border-bc: #282853;
     --font-f: 'Arvo', serif;
-
+    
 }
 
 a {
@@ -71,5 +71,5 @@ button:hover {
 .modal .form-group input:focus-within {
     border: 1px solid var(--orange-c);
     transition: 0.7s;
-    color: white;
+    color: black;
 }
