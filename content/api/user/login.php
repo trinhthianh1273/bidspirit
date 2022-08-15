@@ -2,31 +2,18 @@
 
 session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Group1/content/DB_config.php';
+$post = file_get_contents('php://input');
+$post = json_decode($post);
 
+$checkpass = md5(strrev($post->pass).$post->pass);
+$sql = "SELECT username from users WHERE email = '" . $post->email . "' and pass='" . $checkpass . "'";
 
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
-
-        $email = $_POST['email'];
-        $password = md5(strrev($_POST['password']).$_POST['password']);
-        
-        $ret = $mysqli->query("SELECT * FROM users WHERE email='$email' and pass='$password'");
-        $num = $ret->num_rows;
-    if($num > 0) {
-        while($row = $ret->fetch_assoc()) {
-            $json[] = $row;
-        }
-        $_SESSION['ulogin'] = $json;
-        $data['ulogin'] = $_SESSION['ulogin'];
-        echo json_encode($data);
-
-    } else {
-        $data['uloginError'] = "Email or Password incorrect.";
-        echo json_encode($data);
-    }
+$result = $mysqli->query($sql);
+if($result->num_rows > 0) {
+    $_SESSION['ulogin'] = $result['username'];
 } else {
-    if(isset($_SESSION['ulogin'])) {
-        $data['ulogin'] = $_SESSION['ulogin'];
-        echo json_encode($data);
-    }
+    $_SESSION['ulogin_error'] = "Email or password incorrect";
 }
+
+echo json_encode($_SESSION);
 ?>

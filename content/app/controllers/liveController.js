@@ -8,7 +8,6 @@ app.controller('liveController', function($scope,$http){
             method: 'GET'
           }).then(function(res){
             $scope.liveauction = res.data.liveauction;
-            console.log($scope.liveauction);
           });
     }
 })

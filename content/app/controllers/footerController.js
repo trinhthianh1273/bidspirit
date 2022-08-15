@@ -8,7 +8,6 @@ app.controller('footerController', function($scope,$http){
             method: 'GET'
           }).then(function(res){
             $scope.strategy = res.data.strategy;
-            console.log($scope.strategy);
           });
     }
 })

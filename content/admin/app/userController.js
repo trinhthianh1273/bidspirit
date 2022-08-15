@@ -27,7 +27,6 @@ app.controller('userController', function($scope, $http){
       }).then(function(data){
         $(".modal").modal("hide");
           $scope.data = apiModifyTable($scope.data,data.data.userId,data.data);
-          console.log($scope.data);
       });
     }
 
@@ -39,25 +38,19 @@ app.controller('userController', function($scope, $http){
             $scope.error = res.data.error;
             $scope.success = res.data.success;
           });
-          if($scope.error) {
-            return 0;
-          }
-          return 1;
     }
 
     $scope.add = function(){
-    $http({
-      url: URL + 'api/admin/addUser.php',
-      method: 'POST',
-      data: $scope.form
-    }).then(function(data){
-      if(checkAdd()==1) {
-          $scope.data.push(data.data);
-          $(".modal").modal("hide");
-      }
-      
-    });
-  }
+      $http({
+        url: URL + 'api/admin/addUser.php',
+        method: 'POST',
+        data: $scope.form
+      }).then(function(data){
+            $scope.user.push(data.data);
+            $(".modal").modal("hide");
+        
+      });
+    }
 
 
     $scope.remove = function(post,index){
@@ -67,7 +60,7 @@ app.controller('userController', function($scope, $http){
           url: URL + 'api/admin/removeUser.php?id='+post.userId,
           method: 'DELETE'
         }).then(function(data){
-          $scope.data.splice(index,1);
+          $scope.user.splice(index,1);
         });
       }
     }

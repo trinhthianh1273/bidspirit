@@ -116,6 +116,7 @@ insert into products(`merchantId`, `categoryId`, `productname`, `description`, `
 create table category (
 	categoryId int(11)  not null primary key AUTO_INCREMENT,
     categoryname varchar(255) DEFAULT null,
+    description varchar(255) DEFAULT null,
     createDate timestamp not null default current_timestamp,
     updateDate varchar(255) default null
 );

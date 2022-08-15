@@ -1,16 +1,14 @@
 app.controller('loginController', function(sessionService,$scope,$http, $location){
+    $scope.ulogin = [];
     
-    login();
     function login() {
         $http({
             url: URL + "api/user/login.php",
-            method: 'GET'
+            method: 'POST',
+            data: $scope.form
           }).then(function(res){
-            if(res.data.ulogin) {
-                $scope.ulogin = res.data.ulogin;
-                console.log($scope.ulogin);
-            }
-
+            $scope.ulogin = res.data;
+            console.log($scope.ulogin);
           });
     }
 })

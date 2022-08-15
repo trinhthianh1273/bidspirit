@@ -1,3 +1,5 @@
-app.controller('headerController', function($scope,$http){
+
+app.controller('headerController', function(sessionService,$scope,$http,$location){
+
     
 })

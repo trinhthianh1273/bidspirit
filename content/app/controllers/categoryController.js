@@ -9,7 +9,6 @@ app.controller('categoryController', function($scope,$http){
             method: 'GET'
           }).then(function(res){
             $scope.category = res.data.category;
-            console.log($scope.category);
           });
     }
 })
