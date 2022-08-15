@@ -16,7 +16,7 @@ $sql = "UPDATE address SET province= '".$post->province."', district= '".$post->
             WHERE users.userId = '".$id."');";
 $result = $mysqli->query($sql);
 
-$sql = "SELECT * FROM users WHERE id = '".$id."'"; 
+$sql = "SELECT * FROM users WHERE userId = '".$id."'"; 
 $result = $mysqli->query($sql);
 $data = $result->fetch_assoc();
 

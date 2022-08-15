@@ -35,7 +35,7 @@ create table merchants (
     phone varchar(255) DEFAULT null UNIQUE,
     pass varchar(255) DEFAULT null,
     keypass varchar(255) DEFAULT NULL,
-    type int(1) default null,
+    type varchar(255) default null,
     createDate timestamp not null default current_timestamp,
     updateDate varchar(255) default null
 );

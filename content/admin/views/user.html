@@ -131,7 +131,7 @@
             <td>{{user.email}}</td> 
             <td>{{user.phone}}</td>
             <td>{{user.address}}, {{user.commune}}, {{user.district}}, {{user.province}}</td>
-            <td>
+            <td class="px-0 py-auto">
               <button ng-click="edit(user.userId)" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fa-solid fa-pen-to-square"></i></button>
               <button ng-click="remove(user,$index)"><i class="fa-regular fa-circle-xmark"></i></button>
             </td>

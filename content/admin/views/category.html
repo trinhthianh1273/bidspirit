@@ -60,12 +60,49 @@
                                                 <button ng-click="edit(c.categoryId)" data-bs-toggle="modal" data-bs-target="#editCategory"><i class="fa-solid fa-pen-to-square"></i></button>
                                                 <button ng-click="remove(c,$index)"><i class="fa-regular fa-circle-xmark"></i></button>
                                             </td>
-                                            </tr>
-
-                                            
-                                        </table>
-                                    </div>
+                                        </tr>
+                                    </table>
                                 </div>
+
+        <!-- MODAL CHANGE CATEGORY -->
+
+    <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="editCategory" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <form action="" class="row" role="form" name="editUser" method="post" ng-submit="saveEdit()">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title ms-3">Change Category Information</h4>
+                    <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body row mx-auto">
+                    <!-- USER NAME -->
+                    <div class="form-group mb-3">
+                      <label for="username"><strong>Category Name</strong></label>
+                      <input ng-model="form.categoryname" id="categoryname" name="categoryname" value=""
+                          class="form-controller" required>
+                  </div>
+
+                  <!-- EMAIL -->
+                  <div class="form-group mb-3">
+                      <label for="email"><strong>Description</strong></label>
+                      <input ng-model="form.description" id="categoryname" name="categoryname" value=""
+                          class="form-controller" required>
+                  </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+                            </div>
                                 
                                 
                                 </div><!--/.content-->

@@ -23,7 +23,7 @@
                 <div class="modal-body row mx-auto">
                     <!-- merchant NAME -->
                     <div class="form-group mb-3">
-                      <label for="merchantname"><strong>merchant Name</strong></label>
+                      <label for="merchantname"><strong>Merchant Name</strong></label>
                       <input type="text" ng-model="form.merchantname" id="merchantname" name="merchantname" value="" placeholder="merchantname"
                           class="form-controller" required>
                   </div>
@@ -48,6 +48,11 @@
                           <input id="password" ng-model="form.pass" type="password" class="form-controller" name="password"
                               autocomplete="current-password" placeholder="Password" required>
                       </div>
+
+                    <div class="form-group mb-3">
+                      <label for="type"><strong>Type</strong></label>
+                      <input ng-model="form.type" class="form-controller" name="type"placeholder="Type" required>
+                    </div>
 
                   <!-- Zip Code -->
                   <div class="col-6 form-group mb-3">
@@ -102,6 +107,7 @@
             <th>Name</th>
             <th>Email </th>
             <th>Phone</th>
+            <th>Type</th>
             <th>Address</th>
             <th>Action</th>
           </tr>
@@ -112,8 +118,9 @@
             <td>{{merchant.merchantname}}</td>
             <td>{{merchant.email}}</td> 
             <td>{{merchant.phone}}</td>
+            <td>{{merchant.type}}</td>
             <td>{{merchant.address}}, {{merchant.commune}}, {{merchant.district}}, {{merchant.province}}</td>
-            <td>
+            <td class="px-0 py-auto">
               <button ng-click="edit(merchant.merchantId)" data-bs-toggle="modal" data-bs-target="#editmerchant"><i class="fa-solid fa-pen-to-square"></i></button>
               <button ng-click="remove(merchant,$index)"><i class="fa-regular fa-circle-xmark"></i></button>
             </td>
@@ -151,6 +158,10 @@
                   <div class="form-group mb-3">
                       <label for="phone"><strong>Phone</strong></label>
                       <input id="phone" ng-model="form.phone" type="text" class="form-controller" name="phone" placeholder="Enter Your Phone" ng-pattern="/^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/" required>
+                  </div>
+                  <div class="form-group mb-3">
+                      <label for="type"><strong>Type</strong></label>
+                      <input ng-model="form.type" class="form-controller" name="type"placeholder="Type" required>
                   </div>
 
                   <!-- PASS -->

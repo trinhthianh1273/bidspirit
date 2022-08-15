@@ -44,4 +44,16 @@ app.controller('categoryController', function($scope, $http){
               });
         }
     }
+
+    $scope.remove = function(post,index){
+      var result = confirm("Do you want to remove this Category?");
+       if (result) {
+        $http({
+          url: URL + 'api/admin/removeCategory.php?id='+post.categoryId,
+          method: 'DELETE'
+        }).then(function(data){
+          $scope.category.splice(index,1);
+        });
+      }
+    }
 });
