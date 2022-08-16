@@ -37,7 +37,7 @@
     <script src="app/controllers/registerController.js "></script>
     <script src="app/controllers/categoryController.js "></script>
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="mainController">
 
     <div ng-include="'views/header.html'"></div>
 

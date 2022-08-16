@@ -43,5 +43,26 @@ app.config(['$routeProvider',
             when('/register', {
 				templateUrl: 'views/register.html',
 				controller: 'registerController'
+			}). 
+			when('/profile', {
+				templateUrl: 'views/profile.html',
+				controller: 'profileController'
 			});
 	}]);
+
+app.controller('mainController',function($scope, $http){
+	ulogin();
+	function ulogin() {
+		    $http({
+		            url: URL + "getSession.php",
+		            method: 'GET'
+		          }).then(function(res){
+		            $scope.ulogin = res.data;
+		            if($scope.ulogin.username) {
+		            	console.log($scope.ulogin);
+		        }
+		    });
+      }
+
+
+})

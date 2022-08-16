@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-error_reporting(0);
+// error_reporting(0);
 require_once("../DB_config.php");
 
 

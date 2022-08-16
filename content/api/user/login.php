@@ -1,19 +1,30 @@
 <?php 
 
-session_start();
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Group1/content/DB_config.php';
+session_start();
 $post = file_get_contents('php://input');
 $post = json_decode($post);
 
+
+
 $checkpass = md5(strrev($post->pass).$post->pass);
-$sql = "SELECT username from users WHERE email = '" . $post->email . "' and pass='" . $checkpass . "'";
+$sql = "SELECT * from users WHERE email = '" . $post->email . "' and pass='" . md5(strrev($post->pass).$post->pass) . "'";
+
+// $sql = "SELECT * from users WHERE email = 'phungbaokimanh@gmail.com' and pass='" . md5(strrev('User@123').'User@123') . "'";
 
 $result = $mysqli->query($sql);
 if($result->num_rows > 0) {
-    $_SESSION['ulogin'] = $result['username'];
+    $row =  $result->fetch_assoc();
+
+    $_SESSION['userId'] = $row['userId'];
+    $_SESSION['username'] = $row['username'];
+    $_SESSION['ulogin_error'] = "";
 } else {
-    $_SESSION['ulogin_error'] = "Email or password incorrect";
+    $_SESSION['ulogin_error'] = 'Email or password incorrect';
 }
+
+
 
 echo json_encode($_SESSION);
 ?>

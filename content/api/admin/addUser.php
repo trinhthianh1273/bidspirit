@@ -17,7 +17,7 @@ if($mysqli->query($sql) == true) {
 	$mysqli->query($sql);
 	$last_address = $mysqli->insert_id;
 
-	$sql = "INSERT INTO useraddress(userId, addressId) values ('" .$last_user. "', '" .$last_address. "'	);";
+	$sql = "INSERT INTO useraddress(userId, addressId) values ('" .$last_user. "', '" .$last_address. "');";
 	$mysqli->query($sql);
 
 

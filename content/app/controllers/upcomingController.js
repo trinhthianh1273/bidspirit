@@ -8,8 +8,7 @@ app.controller('upcomingController', function($scope,$http){
             url: URL + "api/interview/upcomingauction.php",
             method: 'GET'
           }).then(function(res){
-            $scope.upcomingauction = res.data.upcomingauction;
-            console.log($scope.upcomingauction);
-          });
+            $scope.upcomingauction = res.data.upcomingauction; 
+         });
     }
 })

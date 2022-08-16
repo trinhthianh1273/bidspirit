@@ -1,9 +1,9 @@
 <?php
 session_start();
-$_SESSION['ulogin']=="";
+$_SESSION['username']=="";
+
 session_unset();
-//session_destroy();
+session_destroy();
+
+
 ?>
-<script language="javascript">
-    document.location="../content/index.php";
-</script>

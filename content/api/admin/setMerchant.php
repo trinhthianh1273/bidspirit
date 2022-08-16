@@ -6,6 +6,7 @@ $id  = $_GET["id"];
 
 $post = file_get_contents('php://input');
 $post = json_decode($post);
+$phone = $post->phone;
 $sql = "UPDATE merchants SET merchantname = '".$post->merchantname."', email = '".$post->email."',phone = '".$post->phone. "', type = '" . $post->type . "', updateDate=NOW() WHERE merchantId = '".$id."'";
 
 $result = $mysqli->query($sql);
