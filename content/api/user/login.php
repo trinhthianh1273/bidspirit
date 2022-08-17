@@ -19,9 +19,10 @@ if($result->num_rows > 0) {
 
     $_SESSION['userId'] = $row['userId'];
     $_SESSION['username'] = $row['username'];
-    $_SESSION['ulogin_error'] = "";
+    $_SESSION['login_error'] = "";
+    echo json_encode($row);
 } else {
-    $_SESSION['ulogin_error'] = 'Email or password incorrect';
+    $_SESSION['login_error'] = 'Email or password incorrect';
 }
 
 

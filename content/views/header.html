@@ -18,7 +18,7 @@
         </div>
 
         <div id="userBlock" class="col-1 ms-auto text-center" style="background-color: rgb(247, 74, 5);height: inherit;display: none;">
-            <a href="#!/profile" style="color:white;">Hello <i class="fa-solid fa-user" style="color: white;"></i> {{ulogin.username}}</a>
+            <a href="#!/profile" style="color:white;">Hello <i class="fa-solid fa-user" style="color: white;"></i> {{username}}</a>
         </div>
 
         <div class="col-1" style="border:none;"></div>
@@ -61,11 +61,12 @@
 
             <ul class="dropdown-menu" aria-labelledby="account_ulogin">
                 <li><a class="dropdown-item" href="#!/profile">Profile</a></li>
-                <li><a class="dropdown-item" href="">Log Out</a></li>
+                <!-- <li><button ng-click="logout()">Log Out</button></li> -->
+                <li><a class="dropdown-item" href="./api/user/logout.php">Log Out</a></li>
             </ul>
         </div>
 
         <div class="col text-start"><i class="fa-solid fa-magnifying-glass"></i></div>
-
+        
     </div>
 </div>

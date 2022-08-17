@@ -47,10 +47,47 @@ app.config(['$routeProvider',
 			when('/profile', {
 				templateUrl: 'views/profile.html',
 				controller: 'profileController'
+			}). 
+			when('/bid', {
+				templateUrl: 'views/bid.html',
+				controller: 'bidController'
 			});
 	}]);
 
-app.controller('mainController',function($scope, $http){
+
+/*
+app.run(function($rootScope, $location, loginService){
+    //prevent going to homepage if not loggedin
+    var routePermit = ['/home'];
+    $rootScope.$on('$routeChangeStart', function(){
+        if(routePermit.indexOf($location.path()) !=-1){
+            var connected = loginService.islogged();
+            connected.then(function(response){
+                if(!response.data){
+                    $location.path('/');
+                }
+            });
+ 
+        }
+    });
+    //prevent going back to login page if session is set
+    var sessionStarted = ['/'];
+    $rootScope.$on('$routeChangeStart', function(){
+        if(sessionStarted.indexOf($location.path()) !=-1){
+            var cantgoback = loginService.islogged();
+            cantgoback.then(function(response){
+                if(response.data){
+                    $location.path('/home');
+                }
+            });
+        }
+    });
+});
+*/
+
+
+
+app.controller('mainController',function(sessionService,$scope, $http){
 	ulogin();
 	function ulogin() {
 		    $http({
@@ -59,7 +96,14 @@ app.controller('mainController',function($scope, $http){
 		          }).then(function(res){
 		            $scope.ulogin = res.data;
 		            if($scope.ulogin.username) {
-		            	console.log($scope.ulogin);
+		            	sessionService.set('userId', $scope.ulogin.userId);
+		            	sessionService.set('username', $scope.ulogin.username);
+						sessionService.set('login_error', $scope.ulogin.login_error);
+
+		            	$scope.userId = sessionService.get('userId');
+		            	$scope.username = sessionService.get('username');
+		            	$scope.login_error = sessionService.get('login_error');
+		            	console.log($scope.username, $scope.userId);
 		        }
 		    });
       }

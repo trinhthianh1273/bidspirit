@@ -14,7 +14,7 @@
 
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5 {
     font-family: var(--font-f);
 }
 
@@ -117,6 +117,11 @@ a:hover {
     border-radius: 5px;   
 }
 
+.footer .step-icon {
+    border: 1px solid rgba(247, 74, 5, .5);
+    border-radius: 50%;
+}
+
 .title-main thead {
     background-color: var(--body-c);
 }
@@ -127,24 +132,25 @@ table {
 
 /*  LIVE AUCTION  */
 
-.live, .upcoming, .closed {
-    background-color: var(--step-c);
+.live, .upcoming {  
+    /*.closed, .bid*/
+    /*background-color: var(--step-c);*/
     border-bottom: 1px solid var(--border-bc);
 }
 
 .live table {
     /* background-color: var(--body-c); */
-    border: 1px solid rgba(247, 74, 5, .5);
+    border: 1px solid var(--border-bc);
     border-radius: 50%;
 }
 
 .upcoming table {
-    border: 1px solid rgba(247, 74, 5, .5);
+    border: 1px solid var(--border-bc);
     border-radius: 50%;
 }
 
 .closed table {
-    border: 1px solid rgba(247, 74, 5, .5);
+    border: 1px solid var(--border-bc);
     border-radius: 50%;
 }
 
@@ -226,4 +232,71 @@ table {
 
 .remember-and-password {
 
+}
+
+.page-title {
+    padding: 110px 0 115px;
+    position: relative;
+    overflow: hidden;
+    background-position: 50% 35%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-white-smoke {
+    background-color: var(--step-c);
+}
+
+.bid .col-5 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.product-main-img-area .product-main-img {
+    border: 1px solid var(--border-bc);
+}
+
+img {
+    vertical-align: middle;
+}
+
+.product-main-img img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.product-slider-area {
+    display: flex;
+    width: 70%;
+}
+
+.active-gallery {
+    flex: 1;
+    margin: 14px 10px 10px 10px;
+
+}
+
+.active-gallery img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    border: 1px solid var(--border-bc);
+    padding: 6px;
+    
+}
+
+#bid-btn {
+    font-size: 12px;
+    color: white;
+    background-color: var(--orange-c);
+    padding: 5px 15px;
+    border-radius: 30px;
+}
+
+#bid-btn:hover {
+    background-color: var(--body-c);
+    border: 1px solid var(--border-bc);
+    transition: 0.6s;
 }

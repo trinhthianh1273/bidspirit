@@ -1,3 +1,5 @@
+
+
 app.service('sessionService', ['$http', function($scope,$http){
 	return{
         set: function(key, value){
@@ -14,6 +16,7 @@ app.service('sessionService', ['$http', function($scope,$http){
         }
     };
 }]);
+
 
 function apiModifyTable(originalData,id,response){
     angular.forEach(originalData, function (item,key) {
