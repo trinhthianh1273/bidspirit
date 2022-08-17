@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/boostrap.min.css">
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/angular.min.js"></script>
+	<script src="../assets/js/angular-route.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../app/controllers/upcoming.js"></script>
+	
+</head>
+<style>
+    table {
+        border: 1px solid black;
+    }
+    
+</style>
+<div ng-app="upcoming" ng-controller="upcomingController">
+    <h2 class="text-center">Upcoming Auction</h2> 
+    
+    <div class="row text-center justify-content-around">
+        <table class="col-2"  ng-repeat="upcoming in upcomingauction">
+            <thead style="height: 100%;">
+                <tr>
+                    <th><img src="../assets/img/{{upcoming.productImage1}}" alt="" class="img-fliud" style="max-width: 70%;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{upcoming.productname}}</td>
+                </tr>
+                <tr>
+                    <td>{{upcoming.categoryname}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

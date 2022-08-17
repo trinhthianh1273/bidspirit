@@ -145,3 +145,32 @@ insert into auction (`userId`, `productId`, `price`, `status`) VALUES
 
 
 
+create TABLE orderauction (
+    orderId int(11) NOT NULL primary key auto_increment,
+    userId int(11) DEFAULT null,
+    productId int(11) DEFAULT null,
+    status int(2) DEFAULT null,
+    payment varchar(255) DEFAULT null,
+    price int(11) DEFAULT null,
+    createDate timestamp not null default current_timestamp
+);
+
+alter TABLE orderauction
+add FOREIGN KEY (userId) references users(userId),
+add FOREIGN KEY (productId) references products(productId);
+
+CREATE TABLE tracking(
+    trackingId int(11) NOT NULL primary key auto_increment,
+    orderId int(11) DEFAULT null,
+    tracking varchar(255) not null,
+    remark varchar(255) not null,
+    createDate timestamp not null default current_timestamp
+);
+alter TABLE tracking
+add FOREIGN KEY (orderId) references orderauction(orderId);
+
+insert into orderauction(userId,productId,price, status) VALUES
+(1, 5, 200, 1),
+(1, 6, 500, 1),
+(1, 7, 250, 1),
+(1, 12, 300, 1);
