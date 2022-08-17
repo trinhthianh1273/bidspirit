@@ -1,6 +1,7 @@
 
 app.controller('liveController', function(sessionService,$scope,$http,$location){
     $scope.liveauction = [];
+    
     liveauction();
     function liveauction() {
         $http({

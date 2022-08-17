@@ -31,34 +31,46 @@
 			<div class="row bid-area align-items-center my-3">
 				<h5 class="col-1">{{productDetail[0].basePrice}}$</h5>
 				<h5 class="col text-center">{{productDetail[0].endDate}}</h5>
-				<button class="col btn-white" id="bid-btn" data-bs-toggle="modal" data-bs-target="#bid" style="max-width: 20%;">Bid Now</button>
+				<button class="col btn-white" id="bid-btn" data-bs-toggle="modal" data-bs-target="#bidModal" style="max-width: 20%;">Bid Now</button>
 			</div>
-			<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="bid" tabindex="-1" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
+
+
+			<!-- BID MODAL -->
+			<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="bidModal" tabindex="-1" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content bg-white-smoke">
+
+						<!-- FROM BID -->
 						<form action="" class="row" role="form" name="addUser" method="post" ng-submit="add()">
 							<!-- Modal Header -->
 							<div class="modal-header">
 								<div>
-									<h4 class="modal-title ms-3">ADD USER</h4>
-									<span id="status"></span>
+									<h4 class="modal-title text-muted ms-3">Bid Now</h4>
+									
 								</div>
-								<button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+								<!-- <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button> -->
+								<button type="button" class="close text-white" data-bs-dismiss="modal" aria-label="Close">x</button>
 							</div>
 							<!-- Modal body -->
 							<div class="modal-body row mx-auto">
 								<!-- USER NAME -->
 								<div class="form-group mb-3">
-									<label for="username"><strong>User Name</strong></label>
-									<input type="text" ng-model="form.username" id="username" name="username" value="" placeholder="Username"
-									class="form-controller" required>
+									<label for="amount">Bid Amount</label>
+									<div class="input-group">
+	                                <input id="amount" type="text" class="form-control form-controller"
+	                                       onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')" name="amount"
+	                                       placeholder="0.00" required="" value="" autocomplete="off">
+	                                <div class="input-group-prepend">
+	                                <span
+	                                    class="input-group-text bg-white-smoke custom_border_span text-light">USD</span>
+	                                </div>
+                            </div>
 								</div>
 								
 							</div>
 							<!-- Modal footer -->
 							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-								<button type="submit" ng-disabled="addItem.$invalid" class="btn btn-primary">Add</button>
+								<button type="submit" ng-disabled="addItem.$invalid" class="btn btn-primary">Bid Now</button>
 							</div>
 						</form>
 					</div>

@@ -247,6 +247,8 @@ table {
     background-color: var(--step-c);
 }
 
+/*BID PRODUCT*/
+
 .bid .col-5 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50%;
@@ -299,4 +301,33 @@ img {
     background-color: var(--body-c);
     border: 1px solid var(--border-bc);
     transition: 0.6s;
+}
+
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+.bid label {
+    color: #a2aec2;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#bidModal {
+    padding:  0;
 }
