@@ -9,7 +9,7 @@ app.controller('loginController', function(sessionService,$scope,$http, $locatio
           }).then(function(res){
             $scope.ulogin = res.data;
             if($scope.ulogin.userId) {
-                $location.path('/');
+                $location.path('/home');
             } else {
                 document.getElementById('login_error').style.display = 'block';
             }

@@ -154,6 +154,10 @@ table {
     border-radius: 50%;
 }
 
+.live img:hover {
+    cursor: pointer;
+}
+
 .live .btn {
     padding: 8px 20px;
     border: 1px solid #f74a05;
@@ -290,10 +294,11 @@ img {
 }
 
 #bid-btn {
+    font-weight: 600;
     font-size: 12px;
     color: white;
     background-color: var(--orange-c);
-    padding: 5px 15px;
+    padding: 7px 20px;
     border-radius: 30px;
 }
 
@@ -330,4 +335,14 @@ button.close {
 
 #bidModal {
     padding:  0;
+}
+
+.btn-bid-submit {
+    font-size: 12px;
+    color: white;
+    background-color: var(--orange-c);
+}
+
+.bid .bid-area {
+    border-bottom: 1px solid var(--border-bc);
 }

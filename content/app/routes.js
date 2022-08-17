@@ -8,6 +8,10 @@ app.config(['$routeProvider',
 				templateUrl: 'views/home.html',
 				controller: 'homeController'
 			}).
+			when('/home', {
+				templateUrl: 'views/home.html',
+				controller: 'homeController'
+			}).
             when('/live', {
 				templateUrl: 'views/live.html',
 				controller: 'liveController'
