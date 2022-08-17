@@ -42,11 +42,25 @@
 </head>
 <body ng-app="myApp" ng-controller="mainController">
 
+<<<<<<< HEAD
+<body ng-app="my-App">
+
+    
+
+   <ng-view>
+
+   
+   </ng-view>
+   
+
+   
+
     <div ng-include="'views/header.html'"></div>
 
     <ng-view></ng-view>
 
     <div ng-include="'views/footer.html'"></div>
+
 
 
 </body>

@@ -55,6 +55,31 @@ app.config(['$routeProvider',
 	}]);
 
 
+
+app.config(['$routeProvider',,
+    function($routeProvider){
+        $routeProvider.
+        when('/', {
+            templateUrl: "views/home.html",
+            controller: 'homeController'
+        }).
+        when('/login', {
+            templateUrl: "views/login.html",
+            controller: 'userLogin'
+        }).
+        when('/register', {
+            templateUrl: "views/register.html",
+            controller: 'userRegister'
+        }).
+        when('/admin', {
+            templateUrl: "admin/login.html",
+            controller: 'admin'
+        }).
+        otherwise({
+            templateUrl: 'views/home.html'
+        });
+    }]);
+
 /*
 app.run(function($rootScope, $location, loginService){
     //prevent going to homepage if not loggedin
