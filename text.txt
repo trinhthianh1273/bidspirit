@@ -15,3 +15,20 @@ git commit -m "Tên người đẩy: Nội dung thay đổi"
 => Đẩy toàn bộ file thay đổi lên Local Repository
 git push
 => Đẩy toàn bộ nội dung lên Remote Repository
+
+<?php require_once $_SERVER['DOCUMENT_ROOT']."/group1/content/views/header.html";?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-sH8JPhKJUeA9PWk3eOcOl8U+lfZTgtBXD41q6cO/slwxGHCxKcW45K4oPCUhHG7NMB4mbKEddVmPuTXtpbCbFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-sH8JPhKJUeA9PWk3eOcOl8U+lfZTgtBXD41q6cO/slwxGHCxKcW45K4oPCUhHG7NMB4mbKEddVmPuTXtpbCbFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+regexPhone =/^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/
+<button ng-click="edit(user.userId)" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa-solid fa-pen-to-square"></i></button>
+
+
+session_start();
+require_once("../DB_config.php");
+if(strlen($_SESSION['alogin']) == 0) {
+    $extra="login.php";
+    header("location:$extra");
+} else {
+    
+}

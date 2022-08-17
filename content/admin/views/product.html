@@ -1,0 +1,136 @@
+<div ng-controller="productController">
+    <div class="row align-items-center">
+      <h1 class="col text-start">Manage products</h1>
+      <div class="col-2 me-0">
+        <button ng-click="addproduct()" data-bs-toggle="modal" data-bs-target="#addproduct"><i class="fa-solid fa-plus"></i> ADD product</button>
+      </div>
+
+      <!-- ADD product -->
+    <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="addproduct" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <form action="" class="row" role="form" name="addproduct" method="post" ng-submit="add()">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <div>
+                      <h4 class="modal-title ms-3">ADD product</h4>
+                      <span id="status"></span>
+                    </div>
+                    <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body row mx-auto">
+                    <!-- product NAME -->
+                    <div class="form-group mb-3">
+                      <label for="productname"><strong>product Name</strong></label>
+                      <input type="text" ng-model="form.productname" id="productname" name="productname" value="" placeholder="productname"
+                          class="form-controller" required>
+                  </div>
+
+                  <!-- EMAIL -->
+                  <div class="col-6 form-group mb-3">
+                      <label for="email"><strong>Desciption</strong></label>
+                      <input type="email" ng-model="form.description" id="email" name="email" value="" placeholder="Email"
+                          class="form-controller" required>
+                  </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" ng-disabled="addItem.$invalid" class="btn btn-primary">Add</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div> <!-- ADD product -->
+    </div>
+
+
+
+    <div class="module-body table">
+      <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped    display" width="100%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Category </th>
+            <th>Base Price</th>
+            <th>Status</th>
+            <th>CreateDate</th>
+            <th>UpdateDate</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="product in product">
+            <td>{{$index + 1}}</td>
+            <td>{{product.productname}}</td>
+            <td>{{product.categoryname}}</td> 
+            <td>{{product.baseprice}}</td>
+            <td>{{product.status}}</td>
+            <td>{{product.createDate}}</td>
+            <td>{{product.updateDate}}</td>
+            <td class="px-0 py-auto">
+              <button ng-click="edit(product.productId)" data-bs-toggle="modal" data-bs-target="#editproduct"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button ng-click="remove(product,$index)"><i class="fa-regular fa-circle-xmark"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+        <!-- CHANGE PRODUCT -->
+      <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="editproduct" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <form action="" class="row" role="form" name="editproduct" method="post" ng-submit="saveEdit()">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title ms-3">Change product Information</h4>
+                    <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body row mx-auto">
+                    <!-- product NAME -->
+                    <div class="form-group mb-3">
+                      <label for="productname"><strong>product Name</strong></label>
+                      <input type="text" ng-model="form.productname" id="productname" name="productname"
+                          class="form-controller" required>
+                  </div>
+
+                  <!-- EMAIL -->
+                  <div class="form-group mb-3">
+                      <label for="description"><strong>Description</strong></label>
+                        <textarea class="span8" ng-model="form.description"  name="description" rows="5"></textarea>
+                  </div>
+
+                  <div class="form-group mb-3">
+                      <label for="baseprice"><strong>Base Price</strong></label>
+                      <input type="number" ng-model="form.basePrice" string-to-number id="baseprice" name="baseprice"
+                          class="form-controller" required>
+                  </div>
+
+                  <div class="form-group mb-3">
+                      <label for="status"><strong>status</strong></label>
+                      <input type="number" ng-model="form.status" string-to-number id="status" name="status"
+                          class="form-controller" required>
+                  </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+  </div>
+  

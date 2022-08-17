@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:content/views/login.html
 
 
@@ -54,21 +55,83 @@ session_start();
     <p class="text--center">Not a member? <a href="#">Sign up now</a> <svg class="icon">
         <use xlink:href="#icon-arrow-right"></use>
       </svg></p>
+=======
+<div ng-controller="loginController" class="user-page">
+>>>>>>> 18ce28a9a858822577e276d7ab3996729bc17f0d
 
+  <!-- LOGIN TITLE -->
+  <div class="row mb-5 text-center align-items-center title-form">
+    <h2>Log In</h2>
   </div>
 
-  <svg xmlns="http://www.w3.org/2000/svg" class="icons">
-    <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
-      <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z" />
-    </symbol>
-    <symbol id="icon-lock" viewBox="0 0 1792 1792">
-      <path d="M640 768h512V576q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28H416q-40 0-68-28t-28-68V864q0-40 28-68t68-28h32V576q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z" />
-    </symbol>
-    <symbol id="icon-user" viewBox="0 0 1792 1792">
-      <path d="M1600 1405q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1405q0-53 3.5-103.5t14-109T236 1084t43-97.5 62-81 85.5-53.5T538 832q9 0 42 21.5t74.5 48 108 48T896 971t133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5T896 896 624.5 783.5 512 512t112.5-271.5T896 128t271.5 112.5T1280 512z" />
-    </symbol>
-  </svg>
 
-</body>
-</html>
 
+  <div class="container">
+    <!-- LOGIN FORM -->
+    <div class="row align-items-center py-5">
+      <div class="col-lg-6">
+        <img src="assets/img/menwork.png" style="max-width: 100%;" alt="">
+      </div>
+
+
+      <div class="col-lg-6" style="max-width: 50%;">
+
+        <!-- LABEL -->
+        <div class="form-header">
+          <h4>Log in here</h4>
+          <h2>Welcome To BidLab</h2>
+          <span id="login_error" style="display: none;">{{ulogin_error}}</span>
+        </div>
+
+        <!-- FORM -->
+        <form action="" method="post" ng-submit="login()">
+
+          <!-- EMAIL -->
+          <div class="form-group mb-3">
+            <label for="email"><strong>Email</strong></label>
+            <input type="email" ng-model="form.email" id="email" name="email" value="" placeholder="Enter Your Email" class="form-controller"
+              required>
+          </div>
+
+          <!-- PASS -->
+          <div class="form-group mb-3">
+            <label for="password"><strong>Password</strong></label>
+            <input id="password" ng-model="form.pass" type="password" class="form-controller" name="password" autocomplete="current-password"
+              placeholder="Enter Your Password" required>
+          </div>
+
+          <!-- REMEMBER  -->
+          <div class="row remember-and-password my-3">
+            <div class="col login-form-remember">
+              <label for="remembermelogin">
+                <input id="remembermelogin" name="remember" type="checkbox"><span> RememberMe </span>
+              </label>
+            </div>
+
+            <!-- FORGOT -->
+            <div class="col forget-pass text-end">
+              <a class="btn-password" href="#">Forget Password?</a>
+            </div>
+          </div>
+          <!--/.remember-and-password-->
+
+          <!-- LOGIN BUTTON -->
+          <div class="row form-btn-group align-items-center justify-content-start">
+            <div class="col-auto form-login-area">
+              <button type="submit" id="recaptcha" class="btn btn-default">
+                Login </button>
+            </div>
+
+            <!-- OTHER -->
+            <div class="col login-form-register-now">
+              You have no account? <a class="btn-register-now"
+                href="#!/register">Register</a>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <div class="my-5" style="border-bottom: 3px solid #f74a05;"></div>
+</div>

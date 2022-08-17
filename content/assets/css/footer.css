@@ -1,0 +1,29 @@
+:root {
+    --orange-c: rgb(247, 74, 5);
+    --extra-c: rgb(162, 174, 194);
+}
+
+.step {
+    position: relative;
+}
+
+.step-icon:before {
+    position: absolute;
+    width:calc(100% + 16px);
+    height:calc(100% + 16px);
+    border-radius: 50%;
+    border: 1px dashed #f74a05;
+    content: '';
+    left: -8px;
+    top: -8px;
+    animation: round 20s linear infinite;
+}
+
+i {
+    color:var(--orange-c);
+}
+
+.footer {
+    font-family: "Rubik", sans-serif;
+    color: #a2aec2;
+}

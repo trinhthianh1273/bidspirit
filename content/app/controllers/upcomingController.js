@@ -1,6 +1,5 @@
-var URL = "http://localhost/group1/content/";
 
-var app = angular.module('upcoming', ['ngRoute']);
+
 app.controller('upcomingController', function($scope,$http){
     $scope.upcomingauction = [];
     upcomingauction();
@@ -9,8 +8,7 @@ app.controller('upcomingController', function($scope,$http){
             url: URL + "api/interview/upcomingauction.php",
             method: 'GET'
           }).then(function(res){
-            $scope.upcomingauction = res.data.upcomingauction;
-            console.log($scope.upcomingauction);
-          });
+            $scope.upcomingauction = res.data.upcomingauction; 
+         });
     }
 })

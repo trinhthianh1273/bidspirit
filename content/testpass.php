@@ -1,10 +1,14 @@
 <?php 
 
-echo md5('321@tseT' . 'Test@123');
+echo md5(strrev('Test@123') . 'Test@123');
 echo '<br/>';
-echo md5('312$resU' . 'User@123');
+echo md5(strrev('User@123') . 'User@123');
 echo '<br/>';
-echo md5('312$tnahcreM' . 'Merchant@123');
+echo md5('321$tnahcreM' . 'Merchant@123');
+echo '<br/>';
+
+echo md5(strrev('Test@123').'Test@123');
+echo '<br/>';
 
 
 ?>
