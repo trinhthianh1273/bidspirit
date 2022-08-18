@@ -16,15 +16,30 @@ if($result->num_rows > 0) {
 }
 $data['productDetail'] = $json1;
 
+
+
+$sql = "SELECT merchantname from merchants
+        where merchantId IN (SELECT merchantId from products WHERE productId = '" . $id . "')";
+$result = $mysqli->query($sql);
+if($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $json2[] = $row;
+
+    $data['merchant'] = $json2;
+}
+
+
+
+
 $sql = "SELECT * from auction 
         inner join products on auction.productId = products.productId
-        WHERE auction.productId = '" . $id ."'";
+        WHERE auction.productId = '" . $id ."' order by price desc";
 $result = $mysqli->query($sql);
 
 if($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $json2[] = $row;
-    $data['productAucrion'] = $json2;
+    $json3[] = $row;
+    $data['productAuction'] = $json3;
 }
 
 
