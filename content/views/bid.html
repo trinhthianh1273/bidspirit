@@ -1,10 +1,10 @@
 <div ng-controller="bidController" class="bid" style="padding-bottom: 72px;">
-	
+
 	<div class="page-title bg-white-smoke mb-5">
 		<h2 class="text-center pb-5 title-main">Auction Detail</h2>
 		<span id="bid-success">{{bidsuccess}}</span>
 	</div>
-	
+
 	<!-- <h2 class="text-center">{{productId}}</h2> -->
 	<!-- Product bidding detail -->
 	<div class="row justify-content-center pt-5">
@@ -14,15 +14,15 @@
 				<img src="assets/img/{{productDetail[0].productImage1}}" alt="" class="img-fluid">
 			</div>
 			<div class="product-slider-area justify-content-start mx-auto">
-				
+
 				<div class="active-gallery">
-					<img src="assets/img/{{productDetail[0].productImage1}}" alt="thumbnail"/>
+					<img src="assets/img/{{productDetail[0].productImage1}}" alt="thumbnail" />
 				</div>
 				<div class="active-gallery">
-					<img src="assets/img/{{productDetail[0].productImage2}}" alt="thumbnail"/>
+					<img src="assets/img/{{productDetail[0].productImage2}}" alt="thumbnail" />
 				</div>
 				<div class="active-gallery">
-					<img src="assets/img/{{productDetail[0].productImage3}}" alt="thumbnail"/>
+					<img src="assets/img/{{productDetail[0].productImage3}}" alt="thumbnail" />
 				</div>
 			</div>
 		</div>
@@ -32,7 +32,8 @@
 			<div class="row bid-price-time-area align-items-center my-3 pb-3">
 				<h5 class="col-1">{{price}}$</h5>
 				<h5 class="col text-center">{{productDetail[0].endDate}}</h5>
-				<button class="col btn-white" id="bid-btn" data-bs-toggle="modal" data-bs-target="#bidModal" style="max-width: 20%;">Bid Now</button>
+				<button class="col btn-white" id="bid-btn" data-bs-toggle="modal" data-bs-target="#bidModal"
+					style="max-width: 20%;">Bid Now</button>
 			</div>
 			<!-- .item-infor-area -->
 			<div class="item-infor-area">
@@ -42,14 +43,15 @@
 							<a data-toggle="tab" href="#auction_infor" role="tab">Auction Information</a>
 						</div>
 						<div class="tab-title col-6 text-center py-3">
-							<a  data-toggle="tab" href="#auction_history" role="tab">Bidding History</a>
+							<a data-toggle="tab" href="#auction_history" role="tab">Bidding History</a>
 						</div>
 					</div>
 				</div>
 				<!-- TAB CONTENT -->
 				<!-- AUCTION INFORMATION -->
 				<div class="tab-content filter-info-tab-content">
-					<div class="tab-pane fade in active show" id="auction_info" role="tabpanel" data-animate="hg-fadeInUp">
+					<div class="tab-pane fade in active show" id="auction_info" role="tabpanel"
+						data-animate="hg-fadeInUp">
 						<div class="item-infor">
 							<div class="row justify-content-between mt-3 p-3">
 								<span class="col">Category:</span>
@@ -62,7 +64,7 @@
 							<div class="row justify-content-between p-3">
 								<span class="col">End Date:</span>
 								<span class="col text-end des">{{productDetail[0].endDate}}</span>
-							</div >
+							</div>
 							<div class="row justify-content-between p-3">
 								<span class="col">Merchant:</span>
 								<span class="col text-end des">{{merchantname}}</span>
@@ -71,7 +73,7 @@
 					</div>
 					<!-- BIDDING HISTORY -->
 					<div class="tab-pane fade" id="auction_history" role="tabpane2" data-animate="hg-fadeInUp">
-						<div class="table-responsive auction-history-table"  data-animate="hg-fadeInUp">
+						<div class="table-responsive auction-history-table" data-animate="hg-fadeInUp">
 							<table class="table" style="color:white;">
 								<thead>
 									<tr>
@@ -86,75 +88,82 @@
 										<td class="history-time">{{bh.auctionTime}}</td>
 										<td class="history-user">{{bh.username}}</td>
 									</tr>
-									
+
 								</tbody>
 							</table>
 						</div>
-						</div> <!-- END BIDDING HISTORY -->
-						</div> <!-- END TAB-CONTENT -->
-						</div><!-- end .item-infor-area -->
-						</div> <!-- END BID  -->
-						<!-- BID MODAL -->
-						<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="bidModal" tabindex="-1" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-centered">
-								<div class="modal-content bg-white-smoke">
-									
-									<!-- MUST LOGIN THEN BID -->
-									<div class="bid-notlogin" style="display: none;">
-										<div class="modal-header">
-											<h4 class="modal-title text-muted ">You are not logged in</h4>
-											<button type="button" class="close text-whit" data-bs-dismiss="modal" aria-label="Close">x</button>
-										</div>
-										<div class="modal-body row justify-content-around align-items-center my-3">
-											<div class="col-3">
-												<button class="btn btn-default" ng-click="login()">Login</button>
-											</div>
-											<div class="col-3">
-												<button class="btn btn-default" ng-click="register()">Register</button>
-											</div>
+					</div> <!-- END BIDDING HISTORY -->
+				</div> <!-- END TAB-CONTENT -->
+			</div><!-- end .item-infor-area -->
+		</div> <!-- END BID  -->
+		<!-- BID MODAL -->
+		<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="bidModal" tabindex="-1"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content bg-white-smoke">
+
+					<!-- MUST LOGIN THEN BID -->
+					<div class="bid-notlogin" style="display: none;">
+						<div class="modal-header">
+							<h4 class="modal-title text-muted ">You are not logged in</h4>
+							<button type="button" class="close text-whit" data-bs-dismiss="modal"
+								aria-label="Close">x</button>
+						</div>
+						<div class="modal-body row justify-content-around align-items-center my-3">
+							<div class="col-3">
+								<button class="btn btn-default" ng-click="login()">Login</button>
+							</div>
+							<div class="col-3">
+								<button class="btn btn-default" ng-click="register()">Register</button>
+							</div>
+						</div>
+					</div>
+					<!-- FROM BID -->
+					<div class="bid-form" style="display: block;">
+						<form action="" class="row" style="padding: 12px;" role="form" name="bid-form" method="post"
+							ng-submit="bid()">
+							<!-- Modal Header -->
+							<div class="modal-header">
+								<div>
+									<h4 class="modal-title text-muted ms-3">Bid Now</h4>
+								</div>
+								<!-- <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button> -->
+								<button type="button" class="close text-white" data-bs-dismiss="modal"
+									aria-label="Close">x</button>
+							</div>
+							<!-- Modal body -->
+							<div class="modal-body row mx-auto">
+								<!-- USER NAME -->
+								<div class="form-group mb-3">
+									<label for="amount">Bid Amount</label>
+									<div class="input-group">
+										<input id="amount" ng-model="form.amount" type="number"
+											class="form-control form-controller"
+											onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')" name="amount"
+											placeholder="0.00" required autocomplete="off">
+										<div class="my-auto">
+											<span
+												class="bid-usd bg-white-smoke custom_border_span text-light">USD</span>
 										</div>
 									</div>
-									<!-- FROM BID -->
-									<div class="bid-form" style="display: block;">
-										<form action="" class="row" style="padding: 12px;" role="form" name="bid-form" method="post" ng-submit="bid()">
-											<!-- Modal Header -->
-											<div class="modal-header">
-												<div>
-													<h4 class="modal-title text-muted ms-3">Bid Now</h4>
-												</div>
-												<!-- <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button> -->
-												<button type="button" class="close text-white" data-bs-dismiss="modal" aria-label="Close">x</button>
-											</div>
-											<!-- Modal body -->
-											<div class="modal-body row mx-auto">
-												<!-- USER NAME -->
-												<div class="form-group mb-3">
-													<label for="amount">Bid Amount</label>
-													<div class="input-group">
-														<input id="amount" ng-model="form.amount" type="number" class="form-control form-controller"
-														onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')" name="amount"
-														placeholder="0.00" required autocomplete="off">
-														<div class="my-auto">
-															<span
-															class="bid-usd bg-white-smoke custom_border_span text-light">USD</span>
-														</div>
-													</div>
-												</div>
-												
-											</div>
-											<!-- Modal footer -->
-											<div class="modal-footer">
-												<button type="submit" ng-disabled="bid-form.$invalid" class="btn btn-bid-submit">Bid Now</button>
-												</div> <!-- modal-footer -->
-												</form> <!-- FROM BID -->
-												</div>  <!-- bid-form -->
-												</div> <!-- modal-content -->
-												</div> <!-- modal-dialog -->
-												</div> <!-- modal fade -->
-												</div> <!-- bid-infor -->
-											</div>
-											</div> <!-- END Product bidding detail -->
-	<div class="" style="margin:0;border: 1px solid red;">
-		<h3>PRODUCT OVERVIEW</h3>
-	</div>
-										</div>
+								</div>
+
+							</div>
+							<!-- Modal footer -->
+							<div class="modal-footer">
+								<button type="submit" ng-disabled="bid-form.$invalid" class="btn btn-bid-submit">Bid
+									Now</button>
+							</div> <!-- modal-footer -->
+						</form> <!-- FROM BID -->
+					</div> <!-- bid-form -->
+				</div> <!-- modal-content -->
+			</div> <!-- modal-dialog -->
+		</div> <!-- modal fade -->
+	</div> <!-- bid-infor -->
+</div> <!-- END Product bidding detail -->
+<div class="item-description mx-auto" style="max-width: 60%;">
+	<h3>PRODUCT OVERVIEW</h3>
+	<p>{{productDetail[0].description}}</p>
+</div>
+
+</div>
