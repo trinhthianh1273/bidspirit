@@ -11,43 +11,26 @@ app.controller('headerController', function(sessionService,$scope,$http,$locatio
       	}
       }
 
-      $scope.logout = function logout() {
+      $scope.logout = function(){
       	alert('Anh');
       	document.getElementById('registerBlock').style.display = 'block';
 		    document.getElementById('userBlock').style.display = 'none';
 		    document.getElementById('account').style.display = 'block';
 		    document.getElementById('account_ulogin').style.display = 'none';
 
-		    $location.path('/');
-      	// sessionService.destroy('userId');
-      	// sessionService.destroy('username');
+      	sessionService.destroy('userId');
+      	sessionService.destroy('username');
 
-      	// $http({
-	      //       url: URL + "api/user/logout.php",
-	      //       method: 'GET'
-	      //     }).then(function(res){
-	      //       $scope.data = res.data;
-	      //       console.log($scope.data);
-	      //       $location.path('/');
-	      //     });
+      	$http({
+	            url: URL + "api/user/logout.php",
+	            method: 'POST'
+	          }).then(function(res){
+	            $scope.data = res.data;
+	            console.log($scope.data);
+	            $location.path('/');
+	          });
 
       }
 
-      
-
-      $scope.bid = function bid() {
-        // sessionService.set('productId', id);
-        // $location.path('/bid');
-        alert('Anh');
-        // $http({
-        //     url: URL + "api/interview/productDetail.php?id=" + id,
-        //     method: 'get'
-        //   }).then(function(res){
-        //     $scope.data = res.data;
-        //     console.log($scope.data);
-        //     sessionService.set('data', $scope.data.productId);
-        //     console.log(sessionService.get('data'));
-        //   });
-    }
-  
+        
 })

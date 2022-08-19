@@ -1,186 +1,66 @@
-<div class="wrapper">
-  <h1><strong>Components #4</strong> Tabs</h1>
-  <div class="tabs">
-    <nav class="tabs__nav" role="tablist">
-      <button class="tabs__btn is-active" data-tab-target="tab-1" type="button" role="tab" aria-selected="true">Tab #1</button>
-      <button class="tabs__btn" data-tab-target="tab-2" type="button" role="tab" aria-selected="false">Trigger tab #2</button>
-      <button class="tabs__btn" data-tab-target="tab-3" type="button" role="tab" aria-selected="false">Trigger content tab #3</button>
-    </nav>
-    <div class="tabs__content">
-      <div class="tabs__pane is-visible" id="tab-1" role="tabpanel">
-        <h3>Tab content #1</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae eaque illo corporis magni consequuntur, consequatur aliquid totam est sapiente soluta. Unde aliquid commodi temporibus praesentium possimus. Sapiente perferendis quidem voluptatum?</p>
-        <p>Veritatis et fugit optio beatae ut pariatur, iusto eum libero quis magnam dignissimos minus dolores sapiente, quam harum reiciendis totam illum voluptatem magni debitis neque, fugiat mollitia exercitationem. Laborum, tempore.</p>
-      </div>
-      <div class="tabs__pane" id="tab-2" role="tabpanel">
-        <h3>Tab content #2</h3>
-        <p>Veritatis et fugit optio beatae ut pariatur, iusto eum libero quis magnam dignissimos minus dolores sapiente, quam harum reiciendis totam illum voluptatem magni debitis neque, fugiat mollitia exercitationem. Laborum, tempore.</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae eaque illo corporis magni consequuntur, consequatur aliquid totam est sapiente soluta. Unde aliquid commodi temporibus praesentium possimus. Sapiente perferendis quidem voluptatum?</p>
-      </div>
-      <div class="tabs__pane" id="tab-3" role="tabpanel">
-        <h3>Tab content #3</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id in, dolorum eveniet et vel repudiandae cum, dolores officia quo tenetur voluptas nihil similique qui voluptate laudantium animi eius suscipit ad.</p>
-      </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Example - example-example34-production</title>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.1/angular.min.js"></script>
+    <script src="script.js"></script>
+    
+    
+  </head>
+  <body ng-app="formExample">
+    <div ng-controller="ExampleController">
+      <form name="form" class="css-form" novalidate ng-submit="form.$valid && update(user)" >
+        Name:
+        <input type="text" ng-model="user.name" ng-pattern="/^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/" name="uName" required />
+        <br />
+        <div ng-show="form.$submitted || form.uName.$touched">
+          <div ng-show="form.uName.$error.required">Tell us your name.</div>
+          <div ng-show="form.uName.$error.pattern">Tell us your name1.</div>
+        </div>
+        E-mail:
+        <input type="email" ng-model="user.email" name="uEmail" required="" />
+        <br />
+        <div ng-show="form.$submitted || form.uEmail.$touched">
+          <span ng-show="form.uEmail.$error.required">Tell us your email.</span>
+          <span ng-show="form.uEmail.$error.email">This is not a valid email.</span>
+        </div>
+        Gender:
+        <input type="radio" ng-model="user.gender" value="male" />male
+        <input type="radio" ng-model="user.gender" value="female" />female
+        <br />
+        <input type="checkbox" ng-model="user.agree" name="userAgree" required="" />
+        I agree:
+        <input ng-show="user.agree" type="text" ng-model="user.agreeSign" required="" />
+        <br />
+        <div ng-show="form.$submitted || form.userAgree.$touched">
+          <div ng-show="!user.agree || !user.agreeSign">Please agree and sign.</div>
+        </div>
+        <input type="button" ng-click="reset(form)" value="Reset" />
+        <input type="submit"  value="Save" />
+      </form>
     </div>
-  </div>
-</div>
-
-<style>
-  :root {
-  --font-base: "Poppins", sans-serif;
-  --color-accent: #6158de;
-  --color-accent-x-light: #fafafa;
-  --color-base: #222;
-}
-
-body {
-  font-family: var(--font-base);
-  color: var(--color-base);
-  line-height: 1.5;
-}
-
-.wrapper {
-  width: min(100% - 2rem, 90ch);
-  margin-inline: auto;
-  padding-top: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-button {
-  all: unset;
-}
-
-h1 {
-  margin-bottom: 2rem;
-  font-weight: 700;
-  font-size: 3rem;
-  color: #000;
-  line-height: 1.2;
-
-  strong {
-    display: block;
-    font-weight: 500;
-    color: #999;
-    font-size: 1rem;
-  }
-}
-
-.tabs {
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-
-  &__nav {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-    background-color: var(--color-accent-x-light);
-  }
-
-  &__btn {
-    position: relative;
-    padding: 1rem 1.25rem;
-    cursor: pointer;
-    transition: opacity 0.3s;
-
-    &:not(.is-active) {
-      opacity: 0.6;
-
-      &:hover {
-        opacity: 1;
+  </body>
+</html>
+<script type="text/javascript">
+  (function(angular) {
+  'use strict';
+  angular.module('formExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+    $scope.master = {};
+    $scope.update = function(user) {
+      alert('Form is validated and now will be submitted.');
+      $scope.master = angular.copy(user);
+    };
+    $scope.reset = function(form) {
+    if (form) {
+        form.$setPristine();
+        form.$setUntouched();
       }
-    }
-
-    &.is-active {
-      color: var(--color-accent);
-      background-color: #fff;
-      border-right: 1px solid rgba(0, 0, 0, 0.125);
-      border-left: 1px solid rgba(0, 0, 0, 0.125);
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        height: 1px;
-        width: 100%;
-        background-color: #fff;
-      }
-    }
-
-    &:first-child {
-      &.is-active {
-        border-left: none;
-      }
-    }
-  }
-
-  &__pane {
-    display: none;
-    padding: 2rem 1.25rem;
-
-    &.is-visible {
-      display: block;
-    }
-  }
-}
-
-h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  & + & {
-    margin-top: 1rem;
-  }
-}
-
-</style>
-
-<script>
-  // Tabs
-const tabBtns = document.querySelectorAll(".tabs__btn");
-const tabPanes = document.getElementsByClassName("tabs__pane");
-
-let fadeTime = 200;
-
-function fadeOut(target) {
-  target.style.opacity = 1;
-  target.style.transition = `opacity ${fadeTime}ms`;
-  target.style.opacity = 0;
-  setTimeout(() => {
-    target.style.display = "none";
-  }, fadeTime);
-}
-
-function fadeIn(target) {
-  target.style.opacity = 0;
-  target.style.transition = `opacity ${fadeTime}ms`;
-  target.style.opacity = 1;
-  setTimeout(() => {
-    target.style.display = "block";
-  }, fadeTime);
-}
-
-function triggerTab(elt) {
-  elt.preventDefault();
-
-  tabBtns.forEach((btn) => {
-    btn.classList.remove("is-active");
-    btn.setAttribute("aria-selected", false);
-  });
-
-  [].forEach.call(tabPanes, (pane) => {
-    fadeOut(pane);
-  });
-
-  elt.target.classList.add("is-active");
-  elt.target.setAttribute("aria-selected", true);
-  let clickedTab = elt.target.dataset.tabTarget;
-  fadeIn(document.querySelector(`#${clickedTab}`));
-}
-
-tabBtns.forEach((tab) => {
-  tab.addEventListener("click", triggerTab);
-});
-
+    $scope.user = angular.copy($scope.master);
+  };
+  $scope.reset();
+  }]);
+  })(window.angular);
 </script>

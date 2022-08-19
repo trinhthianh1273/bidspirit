@@ -10,5 +10,8 @@ echo '<br/>';
 echo md5(strrev('Test@123').'Test@123');
 echo '<br/>';
 
+echo md5(strrev('anh123').'anh123');
+echo '<br/>';
+
 
 ?>

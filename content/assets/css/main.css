@@ -236,6 +236,14 @@ table {
     color: white;
 }
 
+.user-page .errormsg {
+    color: var(--orange-c);
+}
+
+.user-page .errormsg .span {
+    color: var(--orange-c);
+}
+
 .remember-and-password {
 
 }
@@ -428,6 +436,8 @@ button.close {
 
 .item-infor-area .tab-content .item-infor div{  
     box-sizing: content-box;
+    max-width: 95%;
+    margin: auto;
 }
 
 
@@ -439,8 +449,8 @@ button.close {
     border-style: none;
 }
 
-.bid h3 {
 
-    margin-block-start: 0;
-    margin-block-end: 0;
+.bid .item-description {
+    color: red;
+    max-width: 60%;
 }
