@@ -1,5 +1,5 @@
 app.controller('closedProduct', function($scope,$http){
-    $scope.closedauction = [];
+    $scope.viewProduct = [];
     viewProduct();
     function viewProduct() {
         $http({
