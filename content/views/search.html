@@ -1,0 +1,67 @@
+<div ng-controller="searchController" class="search">
+	<div class="page-title bg-white-smoke mb-5">
+        <h2 class="text-center title-main">Search Result{ {{search}} }</h2>
+        <h4></h4>
+    </div> 
+	<div class="noresult">
+		
+	</div>
+	<div class="row text-center justify-content-around pb-5">
+
+			<!-- LIVE Product -->
+            <table class="col-2" ng-repeat="live in live">
+                <thead style="height: 100%;">
+                    <tr><th>{{live.productname}}</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="col"><img ng-click="bid(live.productId)" src="assets/img/{{live.productImage1}}" alt="" class="img-fluid" style="max-width: 70%;max-height: 70%;" ></td></tr>
+                    <tr class="row ms-0 align-items-center" style="max-width: 100%;">
+                        <td class="col">{{live.basePrice}}$</td>
+                        <td class="col">{{live.endDate}}</td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-default btn-white" ng-click="bid(live.productId)">Bid Now</button></td>
+                        <!-- <td><a href="" class="btn btn-default mb-3">Bid Now</a></td> -->
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- UPCOMMING PRODUCT -->
+            <table class="col-2"  ng-repeat="upcoming in upcoming">
+	            <thead style="height: 100%;">
+	                <tr>
+	                    <th><img ng-click="upcomingProduct()" src="assets/img/{{upcoming.productImage1}}" alt="" class="img-fliud" style="max-width: 70%;"></th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <tr>
+	                    <td>{{upcoming.productname}}</td>
+	                </tr>
+	                <tr>
+	                    <td>{{upcoming.categoryname}}</td>
+	                </tr>
+	            </tbody>
+	        </table>
+
+			<!-- CLOSED PRODUCT -->
+            <table class="col-2" ng-repeat="closed in closed">
+                <thead>
+                    <tr>
+                        <th>{{closed.productname}}</th>
+                    </tr>
+                    <tr>
+                        <td>{{closed.categoryname}}</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="col">
+                        <img ng-click="closedProduct(closed.productId)" src="assets/img/{{closed.productImage1}}" alt="" class="img-fluid" style="max-width: 70%;max-height: 70%;" >
+                    </td></tr>
+                    <tr class="row">
+                        <td class="col">Closed</td>
+                        <td class="col">{{closed.username}}</td>
+                    </tr>
+                </tbody>
+            </table>
+    </div> 
+</div>

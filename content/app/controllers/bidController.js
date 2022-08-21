@@ -65,6 +65,16 @@ app.controller('bidController', function(sessionService,$scope, $http, $location
 	  $scope.register = function login() {
 	  	$location.path('/register');
 	  }
+
+	  $scope.showAuction = function() {
+	  		$('#auction_info').addClass("active show");
+	  		$('#auction_history').removeClass("active show");
+	  }
+
+	  $scope.showHistory = function() {
+	  	$('#auction_info').removeClass("active show");
+	  	$('#auction_history').addClass("active show");
+	  }
 })
 
 /*

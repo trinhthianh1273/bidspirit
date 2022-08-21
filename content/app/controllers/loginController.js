@@ -2,6 +2,8 @@ app.controller('loginController', function(sessionService,$scope,$http, $locatio
     
     
     $scope.login = function login() {
+        // event.preventDefault();
+        
         $http({
             url: URL + "api/user/login.php",
             method: 'POST',

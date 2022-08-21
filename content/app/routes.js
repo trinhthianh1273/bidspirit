@@ -8,10 +8,6 @@ app.config(['$routeProvider',
 				templateUrl: 'views/home.html',
 				controller: 'homeController'
 			}).
-			when('/home', {
-				templateUrl: 'views/home.html',
-				controller: 'homeController'
-			}).
             when('/live', {
 				templateUrl: 'views/live.html',
 				controller: 'liveController'
@@ -55,6 +51,18 @@ app.config(['$routeProvider',
 			when('/bid', {
 				templateUrl: 'views/bid.html',
 				controller: 'bidController'
+			}). 
+			when('/closedProduct', {
+				templateUrl: 'views/closedProduct.html',
+				controller: 'closedProduct'
+			}). 
+			when('/search', {
+				templateUrl: 'views/search.html',
+				controller: 'searchController'
+			}). 
+			when('/upcomingProduct', {
+				templateUrl: 'views/upcomingProduct.html',
+				controller: 'upcomingProductController'
 			});
 	}]);
 

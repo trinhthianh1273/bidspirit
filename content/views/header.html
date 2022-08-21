@@ -1,37 +1,29 @@
-<div ng-controller="headerController">
-
+<div ng-controller="headerController" class="header">
     <div class="row align-items-center" id="row-head" style="height:50px;border-bottom: 1px solid #282853;">
         <div class="col-1"></div>
         <div class="col-md-2 ms-3">
             <i class="fa-regular fa-envelope"></i>
             <span>Email: abc@gmail.com</span>
         </div>
-
         <div class="col-md-2">
             <i class="fa-solid fa-phone-flip"></i>
             <span>Call Us: 123-456-789</span>
         </div>
-
-        <div id="registerBlock" class="col-1 ms-auto text-center" style="background-color: rgb(247, 74, 5);height: inherit;">
+        <div id="registerBlock" class="col-1 ms-auto text-center" style="background-color: rgb(247, 74, 5);height: inherit;padding-top:12px">
             <i class="fa-regular fa-circle-user" style="color:white;"></i>
             <a href="#!/register" style="color:white;">Register</a>
         </div>
-
         <div id="userBlock" class="col-1 ms-auto text-center" style="background-color: rgb(247, 74, 5);height: inherit;display: none;">
             <a href="#!/profile" style="color:white;">Hello <i class="fa-solid fa-user" style="color: white;"></i> {{username}}</a>
         </div>
-
         <div class="col-1" style="border:none;"></div>
     </div>
-
-
-    <div class="row align-items-center text-center" id="header" ng-controller="HeaderController"
+    <div class="row align-items-center text-center" id="header"
         style="background-color: #0a1227;border-bottom: 1px solid #282853;">
         <a href="#" class="col offset-md-1 d-flex align-items-center" id="logo">
             <img src="./assets/img/hammerIcon.jpg" alt="">
             <h1>BidSpirit</h1>
         </a>
-
         <div class="col-1 d-none d-md-block offset-md-1 col-sm-0"><a href="#!">Home</a></div>
         <div class="col-1 d-none d-md-block"><a href="#!/about">About</a></div>
         <div class="col-1 d-none d-md-block"><a href="#!/category">Category</a></div>
@@ -42,31 +34,38 @@
                 <a class="account-dropdown-label" href="">Account</a>
             </div>
         </div> -->
-
         <div class="col-1 dropdown">
             <a class="btn dropdown-toggle" href="#" role="button" id="account" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 Account
             </a>
-
             <ul class="dropdown-menu" aria-labelledby="account">
                 <li><a class="dropdown-item" href="#!/login">Login</a></li>
                 <li><a class="dropdown-item" href="#!/register">Register</a></li>
             </ul>
-
             <a class="btn dropdown-toggle" href="#" role="button" id="account_ulogin" data-bs-toggle="dropdown"
                 aria-expanded="false" style="display: none;">
                 Account
             </a>
-
             <ul class="dropdown-menu" aria-labelledby="account_ulogin">
                 <li><a class="dropdown-item" href="#!/profile">Profile</a></li>
                 <!-- <li><button ng-click="logout()">Log Out</button></li> -->
-                <li><button class="dropdown-item" ng-click="logout()">Log Out</button></li>
+                <li ng-click="logout()"><button class="dropdown-item" >Log Out</button></li>
             </ul>
         </div>
+        <div class="col text-start search-wrap" >
+            <div class="search-btn text-center" id="search-icon" ng-click="showSearch()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
 
-        <div class="col text-start"><i class="fa-solid fa-magnifying-glass"></i></div>
-        
+            <div class="search-btn text-center" id="x-icon" ng-click="hideSearch()" style="display:none;">
+                <i class="fa-solid fa-xmark" ></i>
+            </div>
+            <div class="search-form p-2 " style="display:none;">
+                <form action="" method="get" name="searchForm" ng-submit="searchForm.$valid && search(form.search)">
+                    <input type="search" ng-model="form.search" placeholder="Search by product name" name="product" required>
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
     </div>
-</div>

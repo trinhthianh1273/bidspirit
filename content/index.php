@@ -28,6 +28,7 @@
     <script src="app/helper/myHelper.js"></script>
 
     
+    
     <script src="app/controllers/homeController.js "></script>
     <script src="app/controllers/headerController.js "></script>
     <script src="app/controllers/footerController.js "></script>
@@ -39,10 +40,14 @@
     <script src="app/controllers/categoryController.js "></script>
     <script src="app/controllers/bidController.js "></script>
     <script src="app/controllers/profileController.js "></script>
+    <script src="app/controllers/searchController.js "></script>
+    <script src="app/controllers/upcomingProductController.js "></script>
+
 </head>
 <body ng-app="myApp" ng-controller="mainController">
 
 
+    
     <div ng-include="'views/header.html'"></div>
 
     <ng-view></ng-view>

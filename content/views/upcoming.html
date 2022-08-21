@@ -8,7 +8,7 @@
         <table class="col-2"  ng-repeat="upcoming in upcomingauction">
             <thead style="height: 100%;">
                 <tr>
-                    <th><img src="assets/img/{{upcoming.productImage1}}" alt="" class="img-fliud" style="max-width: 70%;"></th>
+                    <th><img ng-click="upcomingProduct(upcoming.productId)" src="assets/img/{{upcoming.productImage1}}" alt="" class="img-fliud" style="max-width: 70%;"></th>
                 </tr>
             </thead>
             <tbody>
