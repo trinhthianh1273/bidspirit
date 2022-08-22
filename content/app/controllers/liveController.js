@@ -9,7 +9,6 @@ app.controller('liveController', function(sessionService,$scope,$http,$location)
             method: 'GET'
           }).then(function(res){
             $scope.liveauction = res.data.liveauction;
-            console.log($scope.liveauction);
           });
     }
 

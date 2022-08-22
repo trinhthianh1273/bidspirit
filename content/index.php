@@ -41,7 +41,9 @@
     <script src="app/controllers/bidController.js "></script>
     <script src="app/controllers/profileController.js "></script>
     <script src="app/controllers/searchController.js "></script>
+    <script src="app/controllers/closedProduct.js "></script>
     <script src="app/controllers/upcomingProductController.js "></script>
+    <script src="app/controllers/dashboardController.js "></script>
 
 </head>
 <body ng-app="myApp" ng-controller="mainController">

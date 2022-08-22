@@ -1,0 +1,55 @@
+
+<div ng-controller="dashboardController" class="dashboard">
+    <div class="page-title bg-white-smoke mb-5">
+        <h2 class="text-center pb-5  title-main">Dashboard</h2>
+    </div>
+    <div class="row justify-content-around py-5 mx-auto" style="max-width:80%;margin-top:18px;">
+        <div class="col-lg-4 col-md-6 mb-30">
+            <div class="custom-box-shadow rounded mb-4">
+                <div class="d-flex">
+                    <div class="bg-dashborad-card display-3 text-white d-flex align-items-center justify-content-center rounded p-3">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="dashboard--content d-flex align-items-center flex-column">
+                        <div class="py-4 px-3">
+                            <h3 class="post-title">{{win}}</h3>
+                            <p class="m-0">Win Product</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-30">
+            <div class="custom-box-shadow rounded mb-4">
+                <div class="d-flex">
+                    <div class="bg-dashborad-card display-3 text-white d-flex align-items-center justify-content-center rounded p-3">
+                        <i class="fa-brands fa-blogger-b"></i>
+                    </div>
+                    <div class="dashboard--content d-flex align-items-center flex-column">
+                        <div class="py-4 px-3">
+                            <h3 class="post-title">{{totalBid}}</h3>
+                            <p class="m-0">Total Bid</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-30">
+            <div class="custom-box-shadow rounded mb-4">
+                <div class="d-flex">
+                    <div class="bg-dashborad-card display-3 text-white d-flex align-items-center justify-content-center rounded p-3">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <div class="dashboard--content d-flex align-items-center flex-column">
+                        <div class="py-4 px-3">
+                            <h3 class="post-title">${{totalBidAmount}}</h3>
+                            <p class="m-0">Total Bid Amount</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

@@ -53,7 +53,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                 <i class="fa-solid fa-gauge"></i>
                 <a href="#">Dashboard</a>
             </div>
-            <div class="work p-3">
+            <div class="work p-3 collapsed" data-toggle="collapse">
                 <i class="fa-solid fa-gear"></i>
                 <a href="#!/order">Order Management</a>
             </div>

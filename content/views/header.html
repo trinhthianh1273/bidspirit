@@ -48,6 +48,7 @@
                 Account
             </a>
             <ul class="dropdown-menu" aria-labelledby="account_ulogin">
+                <li><a class="dropdown-item" href="#!/dashboard">Dashboard</a></li>
                 <li><a class="dropdown-item" href="#!/profile">Profile</a></li>
                 <!-- <li><button ng-click="logout()">Log Out</button></li> -->
                 <li ng-click="logout()"><button class="dropdown-item" >Log Out</button></li>
@@ -62,7 +63,7 @@
                 <i class="fa-solid fa-xmark" ></i>
             </div>
             <div class="search-form p-2 " style="display:none;">
-                <form action="" method="get" name="searchForm" ng-submit="searchForm.$valid && search(form.search)">
+                <form action="" method="post" name="searchForm" ng-submit="searchForm.$valid && search(form.search)">
                     <input type="search" ng-model="form.search" placeholder="Search by product name" name="product" required>
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>

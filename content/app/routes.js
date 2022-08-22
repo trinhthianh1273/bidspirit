@@ -63,6 +63,10 @@ app.config(['$routeProvider',
 			when('/upcomingProduct', {
 				templateUrl: 'views/upcomingProduct.html',
 				controller: 'upcomingProductController'
+			}). 
+			when('/dashboard', {
+				templateUrl: 'views/dashboard.html',
+				controller: 'dashboardController'
 			});
 	}]);
 
