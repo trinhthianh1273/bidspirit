@@ -55,6 +55,10 @@ app.config(['$routeProvider',
 			when('/bid', {
 				templateUrl: 'views/bid.html',
 				controller: 'bidController'
+			}).
+			when('/closedProduct',{
+				templateUrl:'views/closedProduct',
+				controller: 'closedProduct'
 			});
 	}]);
 
