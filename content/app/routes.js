@@ -51,6 +51,12 @@ app.config(['$routeProvider',
 			when('/bid', {
 				templateUrl: 'views/bid.html',
 				controller: 'bidController'
+<<<<<<< HEAD
+			}).
+			when('/closedProduct',{
+				templateUrl:'views/closedProduct',
+				controller: 'closedProduct'
+=======
 			}). 
 			when('/closedProduct', {
 				templateUrl: 'views/closedProduct.html',
@@ -67,6 +73,7 @@ app.config(['$routeProvider',
 			when('/dashboard', {
 				templateUrl: 'views/dashboard.html',
 				controller: 'dashboardController'
+>>>>>>> c16f7a317cce4f92bf15723f06dc76c0156c9dc5
 			});
 	}]);
 
