@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Group1/content/DB_config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/group2/content/DB_config.php';
 $sql = "SELECT productId, merchantId, productname,products.description, productImage1, productImage2, productImage3,categoryname,basePrice, startDate, endDate
         from products
         inner join category on products.categoryId = category.categoryId

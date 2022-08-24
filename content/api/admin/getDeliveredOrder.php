@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Group1/content/DB_config.php'; 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/group2/content/DB_config.php'; 
 
 $sql = "SELECT orderauction.orderId, users.username, users.email, users.phone,address.zipcode, address.province, address.district, address.commune, address.address, products.productname, orderauction.price, orderauction.createDate
     from orderauction 

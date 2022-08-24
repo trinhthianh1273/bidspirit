@@ -1,5 +1,5 @@
 <?php
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/Group1/content/DB_config.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/group2/content/DB_config.php';
 
     $id  = $_GET["id"];
     $sql = "SELECT products.productname, orderauction.orderId, orderauction.createDate, tracking.tracking, tracking.remark

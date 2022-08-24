@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Group1/content/DB_config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/group2/content/DB_config.php';
 $sqlTA = "SELECT COUNT(auctionId) as totaltauction FROM auction;";
 $sqlRA = "SELECT COUNT(productId) as runningtauction FROM products
             WHERE status = 0 or status = 1;";

@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Group1/content/DB_config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/group2/content/DB_config.php';
 $id  = $_GET["id"];
 
 $sql = "SELECT products.productId, merchantId, productname,products.description, productImage1, productImage2, productImage3,categoryname,basePrice, startDate, endDate

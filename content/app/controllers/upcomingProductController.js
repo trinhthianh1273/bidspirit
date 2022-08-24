@@ -13,10 +13,15 @@ app.controller('upcomingProductController', function(sessionService, $scope, $ht
 			$scope.productAuction = res.data.productAuction;
 			$scope.merchantname = res.data.merchant[0].merchantname;
 			$scope.price = $scope.productDetail[0].basePrice;
-			
+			$scope.productImg = $scope.productDetail[0].productImage1;
 		});
 	}
 
+
+	$scope.changeImg = function(img) {
+		$scope.productImg = img;
+		console.log($scope.productImg);
+	}
 
 
 

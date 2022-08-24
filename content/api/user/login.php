@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Group1/content/DB_config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/group2/content/DB_config.php';
 session_start();
 $post = file_get_contents('php://input');
 $post = json_decode($post);
@@ -19,10 +19,10 @@ if($result->num_rows > 0) {
 
     $_SESSION['userId'] = $row['userId'];
     $_SESSION['username'] = $row['username'];
-    $_SESSION['login_error'] = "";
+    $_SESSION['login_msg'] = "Login Successfully";
     echo json_encode($row);
 } else {
-    $_SESSION['login_error'] = 'Email or password incorrect';
+    $_SESSION['login_msg'] = 'Email or password incorrect';
 }
 
 

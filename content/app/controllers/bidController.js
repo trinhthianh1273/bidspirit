@@ -21,6 +21,7 @@ app.controller('bidController', function(sessionService,$scope, $http, $location
 			$scope.productDetail = res.data.productDetail;
 			$scope.productAuction = res.data.productAuction;
 			$scope.merchantname = res.data.merchant[0].merchantname;
+			$scope.productImg = $scope.productDetail[0].productImage1;
 			
 			if($scope.productAuction) {
 				$scope.price = $scope.productAuction[0].price;
@@ -29,6 +30,11 @@ app.controller('bidController', function(sessionService,$scope, $http, $location
 				$scope.price = $scope.productDetail[0].basePrice;
 			}
 		});
+	}
+
+	$scope.changeImg = function(img) {
+		$scope.productImg = img;
+		console.log($scope.productImg);
 	}
 
 

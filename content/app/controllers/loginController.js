@@ -13,6 +13,7 @@ app.controller('loginController', function(sessionService,$scope,$http, $locatio
             if($scope.ulogin.userId) {
                 $location.path('/home');
             } else {
+                console.log($scope.ulogin.login_msg);
                 document.getElementById('login_error').style.display = 'block';
             }
           });

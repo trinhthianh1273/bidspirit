@@ -1,4 +1,4 @@
-var URL = "http://localhost/group1/content/";
+var URL = "http://localhost/group2/content/";
 // var multer = require('multer');
 var app = angular.module('myApp', ['ngRoute']);
 

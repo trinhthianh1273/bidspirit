@@ -11,18 +11,18 @@
 		<!-- IMG -->
 		<div class="col-5 product-main-img-area" class="" style="max-width: 40%;">
 			<div id="product-main-img" class="product-main-img text-center">
-				<img src="assets/img/{{productDetail[0].productImage1}}" alt="" class="img-fluid">
+				<img src="assets/img/{{productImg}}" alt="" class="img-fluid">
 			</div>
 			<div class="product-slider-area justify-content-start mx-auto">
 
 				<div class="active-gallery">
-					<img src="assets/img/{{productDetail[0].productImage1}}" alt="thumbnail" />
+					<img src="assets/img/{{productDetail[0].productImage1}}" ng-click="changeImg(productDetail[0].productImage1)" alt="thumbnail" />
 				</div>
 				<div class="active-gallery">
-					<img src="assets/img/{{productDetail[0].productImage2}}" alt="thumbnail" />
+					<img src="assets/img/{{productDetail[0].productImage2}}" ng-click="changeImg(productDetail[0].productImage2)" alt="thumbnail" />
 				</div>
 				<div class="active-gallery">
-					<img src="assets/img/{{productDetail[0].productImage3}}" alt="thumbnail" />
+					<img src="assets/img/{{productDetail[0].productImage3}}" ng-click="changeImg(productDetail[0].productImage3)" alt="thumbnail" />
 				</div>
 			</div>
 		</div>

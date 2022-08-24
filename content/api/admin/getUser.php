@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Group1/content/DB_config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/group2/content/DB_config.php';
 $sql = "SELECT users.userId, username, email, phone, province, district, commune, address
         from users
         INNER join useraddress on users.userId = useraddress.userId
