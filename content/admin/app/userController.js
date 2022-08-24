@@ -21,7 +21,7 @@ app.controller('userController', function($scope, $http){
 
     $scope.saveEdit = function(){
       $http({
-        url: URL + 'api/admin/setUser.php?id='+$scope.form.userId,
+        url: URL + 'api/admin/setOrder.php?id='+$scope.form.orderId,
         method: 'POST',
         data: $scope.form
       }).then(function(data){

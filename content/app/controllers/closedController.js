@@ -1,5 +1,5 @@
 
-app.controller('closedController', function($scope,$http){
+app.controller('closedController', function(sessionService, $scope,$http, $location){
     $scope.closedauction = [];
     closedauction();
     function closedauction() {
@@ -9,5 +9,11 @@ app.controller('closedController', function($scope,$http){
           }).then(function(res){
             $scope.closedauction = res.data.closedauction;
           });
+    }
+
+    $scope.closedProduct = function(id) {
+        sessionService.set('productId', id);
+        $location.path('/closedProduct');
+        
     }
 })

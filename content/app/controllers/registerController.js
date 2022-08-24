@@ -1,4 +1,4 @@
-app.controller('registerController', function($scope,$http){
+app.controller('registerController', function($scope,$http, $location){
     
     function checkpass(pass, cpass) {
         if(pass === cpass) {
@@ -18,7 +18,7 @@ app.controller('registerController', function($scope,$http){
               }).then(function(data){
                     $scope.data = data.data;
                     console.log($scope.data);
-                    location.path('/home');
+                    location.path('/login');
               });
         } else {
             $scope.matchpass = "Password not matched";

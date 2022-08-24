@@ -1,13 +1,21 @@
-app.controller('closedProduct', function($scope,$http){
+app.controller('closedProduct', function(sessionService, $scope,$http, $location){
     $scope.viewProduct = [];
-    viewProduct();
-    function viewProduct() {
+
+    getProductDetail();
+    function getProductDetail(id) {
         $http({
-            url: URL + "api/interview/closedProduct.php",
+            url: URL + "api/interview/closedProduct.php?id=" + id,
             method: 'GET'
           }).then(function(res){
-            $scope.viewProduct = res.data.viewProduct;
+            $scope.productDetail = res.data;
           });
     }
+
+    $scope.closedProduct = function(id) {
+        sessionService.set('productId', id);
+        $location.path('/closedProduct');
+        
+    }
+
 })
 // View mới thêm từ closedaution

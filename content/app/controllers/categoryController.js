@@ -1,6 +1,6 @@
 
 
-app.controller('categoryController', function($scope,$http){
+app.controller('categoryController', function(sessionService, $scope,$http, $location){
     $scope.category = [];
     category();
     function category() {

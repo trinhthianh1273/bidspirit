@@ -1,3 +1,72 @@
-<div ng-controller="insertController">
-  <h1 class="text-center">Insert product</h1>
-</div>
+<div ng-controller="insertController" class="module insert">
+  
+    <div class="module-head">
+      <h3>Insert Product</h3>
+    </div>
+
+    <div class="module-body">
+      <form class="form-horizontal row-fluid" id="insertForm" name="insertproduct" method="post">
+        
+        <div class="control-group">
+          <label class="control-label" for="basicinput">Product Name</label>
+          <input type="text" ng-model="form.productname" name="productName"  placeholder="Enter Product Name" required>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="category">Category</label>
+          <select ng-model="form.category" ng-options="x.categoryname for x in category" placeholder="Category" name="category" required >
+            <option value=""></option>
+          </select>
+          <p>{{cId}}</p>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="category">Merchant</label>
+          <select ng-model="form.merchant" ng-options="x.merchantname for x in merchant" name="merchant" required="required" >
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="description">Product Description</label>
+          <textarea ng-model="form.description" name="description"  placeholder="Enter Product Description" rows="6" >
+          </textarea>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="baseprice">Base Price</label>
+          <input type="number" ng-model="form.baseprice" name="baseprice"  placeholder="Enter Base Price"  required>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="startDate">Start Date</label>
+          <input type="datetime-local" ng-model="form.startDate" name="datetime"  placeholder="Start Date"  required>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="endDate">End Date</label>
+          <input type="datetime-local" ng-model="form.endDate" name="endDate"  placeholder="End Date"  required>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="productimage1">Product Image1</label>
+          <input type="file" ng-model="form.img1" ng-file="form.productimage1" name="" id="productimage1" value=""  required>
+          <p>{{ response.name }}</p>
+        </div>
+        
+        <div class="control-group">
+          <label class="control-label" for="productimage2">Product Image2</label>
+          <input type="file" ng-model="form.img2" ng-file="form.productimage2" name="" required>
+        </div>
+        
+        <div class="control-group">
+          <label class="control-label" for="basicinput">Product Image3</label>
+          <input type="file" ng-model="form.img3" ng-file="form.productimage3" name="" required >
+        </div>
+
+        <div class="control-group">
+          <div class="controls-btn">
+            <button type="submit" name="submit" class="btn"  ng-click="insert()">Insert</button>
+          </div>
+        </div>
+      </form>
+    </div>

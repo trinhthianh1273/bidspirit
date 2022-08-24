@@ -3,12 +3,13 @@
     <div class="page-title bg-white-smoke mb-5">
         <h2 class="text-center pb-5  title-main">Upcoming Auction</h2>
     </div>
+    >>>
     
     <div class="row text-center justify-content-around pb-5">
         <table class="col-2"  ng-repeat="upcoming in upcomingauction">
             <thead style="height: 100%;">
                 <tr>
-                    <th><img src="assets/img/{{upcoming.productImage1}}" alt="" class="img-fliud" style="max-width: 70%;"></th>
+                    <th><img ng-click="upcomingProduct(upcoming.productId)" src="assets/img/{{upcoming.productImage1}}" alt="" class="img-fliud" style="max-width: 70%;"></th>
                 </tr>
             </thead>
             <tbody>

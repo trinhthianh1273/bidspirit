@@ -1,5 +1,5 @@
 
-app.controller('footerController', function($scope,$http){
+app.controller('footerController', function($scope,$http, $location){
     $scope.strategy = [];
     strategy();
     function strategy() {

@@ -13,7 +13,8 @@
     --font-f: 'Arvo', serif;
     --text-light:  #f8f9fa;
     --border-span: #373768;
-
+    --orange-bc: #f74a05;
+    --text-blur: #ccd0d5 ;
 }
 
 h1, h2, h3, h4, h5 {
@@ -27,7 +28,7 @@ a::hover {
 body {
     /* background-color: #0a1227; */
     background-color: var(--body-c);
-    color:white;
+    color: white;
 }
 
 /* [class*="col"] {  
@@ -50,16 +51,20 @@ a {
     color:var(--orange-c);
 }
 
+.header {
+    color: white;
+}
+
+#header a {
+    font-size: 18px;
+}
+
 a:hover {
     text-decoration: none;
     color: var(--orange-c);
     transition: 0.8s;
 }
 
-
-#header a {
-    font-size: 18px;
-}
 
 #logo img {
     width: 40%;
@@ -73,14 +78,14 @@ a:hover {
 .contact i {
     padding: 1rem; 
         border: 1px solid; 
-        background-color:#0f1932;
+        background-color: var(-step-c);
         border-radius:50%;
-        color:#f74a05;
+        color:var(--orange-bc);
 }
 
 .contact .col-3 {
-    background-color: #0f1932;
-    color: #a2aec2;
+    background-color: var(--step-c);
+    color: var(--extra-ac);
     border-radius: 7px;
 }
 
@@ -95,9 +100,81 @@ a:hover {
 }
 
 
+.dropdown-menu button {
+    color: var(--extra-ac);
+}
+
+.dropdown-menu button:hover {
+    transition: 0.8s;
+}
+
+.header .search-wrap {
+    position: relative;
+}
+
+.header .search-wrap .search-btn {
+    max-width:40px; height:40px;
+    border: 1px solid var(--orange-bc);
+    cursor: pointer;
+    /* font-size: 16px; */
+    color: var(--text-blur);
+    transition: all 0.35s;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 38px;
+}
+
+.header .search-wrap .search-btn:hover{
+    background-color: var(--orange-c);
+    color: white;
+}
+
+.header .search-wrap .search-form {
+
+    background-color: var(--body-c);
+    box-shadow: 0 7px 15px rgb(0 0 0 / 15%);
+    width: 400px;
+    height: 70px;
+    position: absolute;
+    top: calc(100% + 30px);
+    right: 200px;
+    text-align: right;
+    z-index: 99;
+}
+
+.header .search-wrap .search-form input[type="search"] {
+    border: 1px solid #282853;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    width: 85%;
+    background-color: transparent;
+    color: var(--extra-ac);
+}
+
+.header .search-wrap .search-form button {
+    background-color: var(--orange-bc);
+    border: 0 solid;
+    /* float: left; */
+    height: 50px;
+    width: 15%;
+    color: white;
+    font-size: 20px;
+    /* -webkit-transition: all 0.2s; */
+    transition: all 0.2s;
+}
+
+.header .search-wrap .search-form button:hover {
+    opacity: 80%;
+}
 
 .footer {
     
+}
+
+.row {
+    margin: auto;
 }
 
 .footer p,a,span {
@@ -156,22 +233,26 @@ table {
     border-radius: 50%;
 }
 
-.live img:hover {
+.live, .upcoming, .closed img:hover {
     cursor: pointer;
 }
 
 .live .btn {
     padding: 8px 20px;
-    border: 1px solid #f74a05;
-    background-color: #f74a05;
+    border: 1px solid var(--orange-bc);
+    background-color: var(--orange-bc);
     border-radius: 30px;
     transition: all .4s;
     overflow: hidden;
 }
 
+.closed img:hover {
+    cursor: pointer;
+}
+
 .hero-content-area .btn-default {
-    border: 1px solid #f74a05;
-    background-color: #f74a05;
+    border: 1px solid var(--orange-bc);
+    background-color: var(--orange-bc);
 }
 
 .btn {
@@ -264,7 +345,7 @@ table {
 /*BID PRODUCT*/
 
 .bid .col-5 {
-    -webkit-box-flex: 0;
+    /* -webkit-box-flex: 0; */
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
@@ -411,7 +492,7 @@ button.close {
     flex: 0 0 50%;
 }
 
-.bid .item-info-area .filter-info-tab .nav-tabs .active a{
+.bid .item-info-area .filter-info-tab .nav-tabs .active h6{
     background-color: var(--orange-c);
 }
 
@@ -424,14 +505,18 @@ button.close {
     
 }
 
-.nav-tabs .tab-title a{
+.nav-tabs .tab-title {
     color: white;
     font-weight: 600;
 }
 
+.nav-tabs .tab-title:hover {
+    cursor: pointer;
+}
+
 .item-infor-area .tab-content .item-infor .des {
     font-weight: 700;
-    color: #ccd0d5;
+    color: var(--text-blur);
 }
 
 .item-infor-area .tab-content .item-infor div{  
@@ -453,4 +538,41 @@ button.close {
 .bid .item-description {
     color: red;
     max-width: 60%;
+}
+
+
+        /* SEARCH */
+.search img:hover {
+    cursor: pointer;
+}
+
+.custom-box-shadow {
+    padding: 15px;
+    background-color: var(--step-c);
+    border: 1px solid rgba(255,255,255, 0.15);
+}
+
+.dashboard .bg-dashborad-card {
+    background-color: var(--orange-bc);
+}
+
+.las {
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+}
+
+.col-form-label {
+    padding-top: calc(0.375rem + 1px);
+    padding-bottom: calc(0.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+label {
+    color: var(--extra-ac);
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
 }

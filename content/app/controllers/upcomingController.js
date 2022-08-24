@@ -1,6 +1,5 @@
 
-
-app.controller('upcomingController', function($scope,$http){
+app.controller('upcomingController', function(sessionService, $scope,$http, $location){
     $scope.upcomingauction = [];
     upcomingauction();
     function upcomingauction() {
@@ -10,5 +9,11 @@ app.controller('upcomingController', function($scope,$http){
           }).then(function(res){
             $scope.upcomingauction = res.data.upcomingauction; 
          });
+    }
+
+    $scope.upcomingProduct = function(id) {
+        sessionService.set('productId', id);
+        $location.path('/upcomingProduct');
+        
     }
 })

@@ -1,0 +1,103 @@
+<div ng-controller="upcomingProductController" class="bid" style="padding-bottom: 72px;">
+	<div class="page-title bg-white-smoke mb-5">
+		<h2 class="text-center pb-5 title-main">Upcomning Detail</h2>
+	</div>
+	<!-- <h2 class="text-center">{{productId}}</h2> -->
+	<!-- Product bidding detail -->
+	<div class="row justify-content-center pt-5">
+		<!-- IMG -->
+		<div class="col-5 product-main-img-area" class="" style="max-width: 40%;">
+			<div id="product-main-img" class="product-main-img text-center">
+				<img src="assets/img/{{productDetail[0].productImage1}}" alt="" class="img-fluid">
+			</div>
+			<div class="product-slider-area justify-content-start mx-auto">
+				<div class="active-gallery">
+					<img src="assets/img/{{productDetail[0].productImage1}}" alt="thumbnail" />
+				</div>
+				<div class="active-gallery">
+					<img src="assets/img/{{productDetail[0].productImage2}}" alt="thumbnail" />
+				</div>
+				<div class="active-gallery">
+					<img src="assets/img/{{productDetail[0].productImage3}}" alt="thumbnail" />
+				</div>
+			</div>
+		</div>
+		<!-- BID -->
+		<div class="col-5 bid-infor" style="max-width: 40%;">
+			<h4 class="text-center my-3">{{productDetail[0].productname}}</h4>
+			<div class="row bid-price-time-area align-items-center my-3 pb-3">
+				<h5 class="col-1">{{price}}$</h5>
+				<h5 class="col text-center">{{productDetail[0].endDate}}</h5>
+				<h5>Upcoming</h5>
+			</div>
+			<!-- .item-infor-area -->
+			<div class="item-infor-area">
+				<div class="filter-info-tab">
+					<div class="nav nav-tabs" role="tablist">
+						<div class="tab-auciton tab-title active col-6 text-center py-3" ng-click="showAuction()"data-toggle="tab" role="tab">
+							Auction Information
+						</div>
+						<div class="tab-history tab-title col-6 text-center py-3" ng-click="showHistory()" data-toggle="tab" role="tab">
+							Bidding History
+						</div>
+					</div>
+				</div>
+				<!-- TAB CONTENT -->
+				<!-- AUCTION INFORMATION -->
+				<div class="tab-content filter-info-tab-content">
+					<div class="tab-pane fade in active show" id="auction_info" role="tabpanel"
+						data-animate="hg-fadeInUp">
+						<div class="item-infor">
+							<div class="row justify-content-between mt-3 p-3">
+								<span class="col">Category:</span>
+								<span class="col text-end des">{{productDetail[0].categoryname}}</span>
+							</div>
+							<div class="row justify-content-between p-3">
+								<span class="col">Start Date:</span>
+								<span class="col text-end des">{{productDetail[0].startDate}}</span>
+							</div>
+							<div class="row justify-content-between p-3">
+								<span class="col">End Date:</span>
+								<span class="col text-end des">{{productDetail[0].endDate}}</span>
+							</div>
+							<div class="row justify-content-between p-3">
+								<span class="col">Merchant:</span>
+								<span class="col text-end des">{{merchantname}}</span>
+							</div>
+						</div>
+					</div>
+					<!-- BIDDING HISTORY -->
+					<div class="tab-pane fade" id="auction_history" role="tabpane2" data-animate="hg-fadeInUp">
+						<div class="table-responsive auction-history-table" data-animate="hg-fadeInUp">
+							<table class="table" style="color:white;">
+								<thead>
+									<tr>
+										<th class="history-price">Price</th>
+										<th class="history-time">Bid Time</th>
+										<th class="history-user">User</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="bh in biddingHistory">
+										<td class="history-price">{{bh.price}}</td>
+										<td class="history-time">{{bh.auctionTime}}</td>
+										<td class="history-user">{{bh.username}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						</div> <!-- END BIDDING HISTORY -->
+						</div> <!-- END TAB-CONTENT -->
+						</div><!-- end .item-infor-area -->
+						</div> <!-- END BID  -->
+						
+						</div> <!-- modal-content -->
+						</div> <!-- modal-dialog -->
+						</div> <!-- modal fade -->
+						</div> <!-- bid-infor -->
+						</div> <!-- END Product bidding detail -->
+						<div class="item-description mx-auto" style="max-width: 60%;">
+							<h3>PRODUCT OVERVIEW</h3>
+							<p>{{productDetail[0].description}}</p>
+						</div>
+					</div>

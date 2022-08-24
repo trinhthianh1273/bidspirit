@@ -8,10 +8,6 @@ app.config(['$routeProvider',
 				templateUrl: 'views/home.html',
 				controller: 'homeController'
 			}).
-			when('/home', {
-				templateUrl: 'views/home.html',
-				controller: 'homeController'
-			}).
             when('/live', {
 				templateUrl: 'views/live.html',
 				controller: 'liveController'
@@ -55,10 +51,29 @@ app.config(['$routeProvider',
 			when('/bid', {
 				templateUrl: 'views/bid.html',
 				controller: 'bidController'
+<<<<<<< HEAD
 			}).
 			when('/closedProduct',{
 				templateUrl:'views/closedProduct',
 				controller: 'closedProduct'
+=======
+			}). 
+			when('/closedProduct', {
+				templateUrl: 'views/closedProduct.html',
+				controller: 'closedProduct'
+			}). 
+			when('/search', {
+				templateUrl: 'views/search.html',
+				controller: 'searchController'
+			}). 
+			when('/upcomingProduct', {
+				templateUrl: 'views/upcomingProduct.html',
+				controller: 'upcomingProductController'
+			}). 
+			when('/dashboard', {
+				templateUrl: 'views/dashboard.html',
+				controller: 'dashboardController'
+>>>>>>> c16f7a317cce4f92bf15723f06dc76c0156c9dc5
 			});
 	}]);
 

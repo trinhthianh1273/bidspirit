@@ -1,5 +1,5 @@
 var URL = "http://localhost/group1/content/";
-
+// var multer = require('multer');
 var app = angular.module('myApp', ['ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
@@ -32,10 +32,41 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/product.html',
             controller: 'productController'
         }). 
+        when('/todayorder', {
+            templateUrl: 'views/todayOrder.html',
+            controller: 'todayorderController'
+        }). 
+        when('/pendingorder', {
+            templateUrl: 'views/Pendingorder.html',
+            controller: 'pendingorderController'
+        }). 
+        when('/deliveredorder', {
+            templateUrl: 'views/deliveredOrder.html',
+            controller: 'deliveredorderController'
+        }).
         otherwise({
             templateUrl: 'views/changepassword.html'
         });
 }]);
+
+app.service('sessionService', ['$http', function($scope,$http){
+    return{
+        set: function(key, value){
+            
+            return sessionStorage.setItem(key, value);
+        },
+        get: function(key){
+
+            return sessionStorage.getItem(key);
+        },
+        destroy: function(key){
+
+            return sessionStorage.removeItem(key);
+        }
+    };
+}]);
+
+
 
 app.run(function($rootScope) {
   $rootScope.typeOf = function(value) {
@@ -55,3 +86,34 @@ directive('stringToNumber', function() {
     }
   };
 });
+
+// app.use(multer({dest: URL + 'assets/img'}));
+
+app.directive('ngFile', ['$parse', function ($parse) {
+        return {
+           restrict: 'A',
+           link: function(scope, element, attrs) {
+              element.bind('change', function(){
+
+              $parse(attrs.ngFile).assign(scope,element[0].files)
+                 scope.$apply();
+              });
+           }
+        };
+    }]);
+
+// app.service('fileUpload', ['$https', function ($https) {
+//     this.uploadFileToUrl = function(file, uploadUrl) {
+//         fd = new FormData();
+//         fd.append('file', file);
+            
+//         $https.post(uploadUrl, fd, {
+//             transformRequest: angular.identity,
+//             headers: {'Content-Type': undefined}
+//         }).
+//         success(function() {
+//         }).
+//         error(function() {
+//         });
+//    }
+// }]);
