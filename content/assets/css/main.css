@@ -173,6 +173,10 @@ a:hover {
     
 }
 
+.row {
+    margin: auto;
+}
+
 .footer p,a,span {
     color: var(--extra-ac);
 }

@@ -1,13 +1,10 @@
-app.controller('orderController', function($scope){
-    $scope.order = [];
-    getorder();
+app.controller('orderController', function($scope,$http,$location){
+    
     function getorder() {
         $http({
-            url: URL + "api/admin/getorder.php",
+            url: URL + "api/admin/getOrder.php",
             method: 'GET'
           }).then(function(res){
-            $scope.order = res.data.order;
-            console.log($scope.order);
           });
     }
 });

@@ -1,0 +1,96 @@
+<div ng-controller="pendingorderController" class="">
+    <div class="row">
+        <div class="module-head">
+            <h3>Pending Orders</h3>
+        </div>
+        <div class="module-body table">
+            <br />
+            
+            <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display" width="100%">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th> Name</th>
+                        <th width="50">Email /Contact no</th>
+                        <th>Shipping Address</th>
+                        <th>Product </th>
+                        <th>Amount </th>
+                        <th>Order Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr ng-repeat="data in pending">
+                        <td>{{$index}}</td>
+                        <td>{{data.username}}</td>
+                        <td width="50">{{data.email}} /{{data.phone}}</td>
+                        <td>{{data.zipcode}}, {{data.province}}, {{data.district}}, {{data.commune}}, {{data.address}}</td>
+                        <td>{{data.productname}}</td>
+                        <td>${{data.price}}</td>
+                        <td>{{data.createDate}}</td>
+                        <td><button ng-click="edit(data.orderId)" data-bs-toggle="modal" data-bs-target="#editOrder"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="editOrder" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form action="" class="row" role="form" name="editOrder" method="post" ng-submit="saveEdit()">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title ms-3">Update Order</h4>
+                                <button type="button" class="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body row mx-auto">
+                                <!-- USER NAME -->
+                                <div class="form-group mb-3">
+                                    <label for="username"><strong>Order Id: {{form.orderId}}</strong></label>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="productname"><strong>Product Name: {{form.productname}}</strong></label>
+                                </div>
+                                <div ng-repeat="(key, value) in dataset">
+                                    <div class="form-group mb-3">
+                                    <label for="createDate"><strong>At Date: {{form.createDate}}</strong></label>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="status"><strong>Status: {{form.tracking}}</strong></label>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="remark"><strong>Remark: {{form.remark}}</strong></label>             
+                                </div>
+                                </div>
+                                
+
+                                <hr>
+
+                                <div class="form-group  mb-3">
+                                    Status:
+                                    <select ng-model="form.tracking" ng-options="x for x in statusSelect" name="status" required="required" style="width:40%;">
+                                        <!-- <option value="">Select Status</option>
+                                        <option value="in Process">In Process</option>
+                                        <option value="Delivered">Delivered</option> -->
+                                    </select>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <strong>Remark:</strong>
+                                    <textarea ng-model="form.remark" rows="4" class="form-controller" required></textarea>
+                                </div>
+                                
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

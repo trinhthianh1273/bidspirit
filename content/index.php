@@ -7,6 +7,7 @@
     <title>BidSpirit</title>
 
     <link rel="stylesheet" href="assets/css/boostrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <!-- <link rel="stylesheet" href="./assets/css/footer.css"> -->
