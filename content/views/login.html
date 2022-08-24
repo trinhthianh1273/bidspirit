@@ -28,7 +28,7 @@
         </div>
 
         <!-- FORM -->
-        <form action="" method="post" ng-submit="login()">
+        <form action="" method="post">
 
           <!-- EMAIL -->
           <div class="form-group mb-3">
@@ -62,7 +62,7 @@
           <!-- LOGIN BUTTON -->
           <div class="row form-btn-group align-items-center justify-content-start">
             <div class="col-auto form-login-area">
-              <button type="submit" id="recaptcha" class="btn btn-default">
+              <button type="submit" ng-click="login()" id="recaptcha" class="btn btn-default">
                 Login </button>
             </div>
 
