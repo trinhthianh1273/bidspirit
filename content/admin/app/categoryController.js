@@ -27,7 +27,7 @@ app.controller('categoryController', function($scope, $http){
       }).then(function(data){
         $(".modal").modal("hide");
           $scope.data = apiModifyTable($scope.data,data.data.categoryId,data.data);
-          console.log($scope.data);
+          
       });
     }
 
@@ -40,7 +40,7 @@ app.controller('categoryController', function($scope, $http){
                 data: $scope.form
               }).then(function(data){
                     $scope.category.push(data.data);
-                    console.log($scope.category);
+                    
               });
         }
     }

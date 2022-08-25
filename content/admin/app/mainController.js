@@ -19,7 +19,7 @@ app.controller('mainController', function($scope,$http,$location){
             $scope.todayOrder = res.data.todayOrder[0].todayCount;
             $scope.pendingOrder = res.data.pendingOrder[0].pendingCount;
             $scope.deliveredOrder = res.data.deliveredOrder[0].deliverdCount;
-            console.log($scope.todayOrder);
+            
           });
     }
 });

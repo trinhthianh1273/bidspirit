@@ -31,7 +31,8 @@ $stmtA->execute();
 
 $sql = "SELECT * FROM users WHERE userId = '".$id."'"; 
 $result = $mysqli->query($sql);
-$data = $result->fetch_assoc();
+$data['user'] = $result->fetch_assoc();
+$data['msg'] = "Change User Information Successfully";
 
 echo json_encode($data);
 

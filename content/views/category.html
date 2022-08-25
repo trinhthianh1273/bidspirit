@@ -1,18 +1,14 @@
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/boostrap.min.css">
 
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/angular.min.js"></script>
-	<script src="../assets/js/angular-route.min.js"></script>
-	<script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../app/controllers/category.js"></script>
-	
-</head>
 
-<div ng-controller="categoryController">
-    <h2 class="text-center">Auction Category</h2> 
+<div ng-controller="categoryController" class="category">
+    <div class="page-title bg-white-smoke mb-5">
+        <h2 class="text-center title-main">Category</h2>
+    </div>
+
+    <div class="row mt-5 justify-content-around">
+        <div class="col-3 text-center mx-auto mb-3 py-3" ng-repeat="category in category" style="width:30%;">
+            <div class="my-3">12</div>
+            <div class="my-3">{{category.categoryname}}</div>
+        </div>
+    </div>
 </div>

@@ -7,7 +7,6 @@ app.controller('merchantController', function($scope, $http){
             method: 'GET'
           }).then(function(res){
             $scope.merchant = res.data.merchant;
-            console.log($scope.merchant);
           });
     }
 
@@ -32,25 +31,21 @@ app.controller('merchantController', function($scope, $http){
       });
     }
 
-    function checkAdd() {
-      $http({
-            url: URL + "api/admin/addMerchant.php",
-            method: 'GET'
-          }).then(function(res){
-            $scope.error = res.data.error;
-            $scope.success = res.data.success;
-          });
-    }
 
     $scope.add = function(){
-    $http({
-      url: URL + 'api/admin/addMerchant.php',
-      method: 'POST',
-      data: $scope.form
-    }).then(function(data){
-          $scope.merchant.push(data.data);
-          $(".modal").modal("hide");
-      
+      $http({
+        url: URL + 'api/admin/addMerchant.php',
+        method: 'POST',
+        data: $scope.form
+      }).then(function(res){
+          $scope.data = res.data;
+          $scope.msg = res.data.add_msg;
+
+            alert($scope.msg);
+            $scope.merchant.push(res.data.merchant);
+            $(".modal").modal("hide");
+          
+          
     });
   }
 

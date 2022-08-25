@@ -2,7 +2,7 @@
 
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/group2/content/DB_config.php';
-$sql = "SELECT products.productId, productname, products.description,categoryname, productImage1, productImage2, productImage3, basePrice, price, username, startDate, endDate from products
+$sql = "SELECT products.productId as productId  , productname, products.description,categoryname, productImage1, productImage2, productImage3, basePrice, price, username, startDate, endDate from products
         inner join category on products.categoryId = category.categoryId
         inner join orderauction on products.productId = orderauction.productId
         INNER join users on orderauction.userId = users.userId

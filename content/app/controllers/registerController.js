@@ -17,11 +17,16 @@ app.controller('registerController', function($scope,$http, $location){
                 data: $scope.form
               }).then(function(data){
                     $scope.data = data.data;
-                    console.log($scope.data);
-                    location.path('/login');
+                    if($scope.data.register_msg == "Register Successfully") {
+                        alert($scope.data.register_msg);
+                        location('/login');
+                    } else {
+                        alert($scope.data.register_msg);
+                    }
               });
         } else {
             $scope.matchpass = "Password not matched";
+            alert($scope.matchpass);
         }
         
     }

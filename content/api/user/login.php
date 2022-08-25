@@ -20,7 +20,7 @@ if($result->num_rows > 0) {
     $_SESSION['userId'] = $row['userId'];
     $_SESSION['username'] = $row['username'];
     $_SESSION['login_msg'] = "Login Successfully";
-    echo json_encode($row);
+    
 } else {
     $_SESSION['login_msg'] = 'Email or password incorrect';
 }

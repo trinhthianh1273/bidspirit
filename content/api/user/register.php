@@ -4,6 +4,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/group2/content/DB_config.php';
 $post = file_get_contents('php://input');
 $post = json_decode($post); 
 
+$data = [];
+
 $sql1 = "INSERT INTO users(username, email, phone, pass, keypass, company, payment) values(?, ?, ?, ?, ?, ?, ?)";
 $stmt1 = $mysqli->prepare($sql1);
 $stmt1->bind_param("sssssss", $username, $email, $phone,$pass, $keypass, $company, $payment);
@@ -35,11 +37,11 @@ $address = $post->address;
 $sql4 = "SELECT userId from users WHERE email = '" . $email . "' or phone = '" . $phone . "'";
 $result = $mysqli->query($sql4);
 if($result->num_rows > 0) {
-	$data['error'] = "Email or Phone Number exist";
+	$data['register_msg'] = "Email or Phone Number existed";
 } else {
 	if($username==null || $email==null || $phone==null || $pass==null || $company==null || $payment==null || $zipcode==null || $province==null || $district==null || $commune==null) {
 
-		$data['error'] = "No infomation";
+		$data['register_msg'] = "No infomation";
 	} else {
 		$stmt1->execute();
 		$userId = $mysqli->insert_id;
@@ -49,7 +51,8 @@ if($result->num_rows > 0) {
 
 		$stmt3->execute();
 
-		$data['success'] = "Register Successfully";
+
+		$data['register_msg'] = "Register Successfully";
 	}
 
 }

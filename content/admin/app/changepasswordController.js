@@ -12,7 +12,7 @@ app.controller('changepasswordController', function($scope, $http){
 		      }).then(function(data){
 		        
 		          $scope.data = data.data;
-		          console.log($scope.data);
+		          
 		      });
     	} else {
     		matchpass =" Password not matched";

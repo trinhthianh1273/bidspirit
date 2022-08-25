@@ -24,6 +24,10 @@ app.config(['$routeProvider',
 				templateUrl: 'views/about.html',
 				controller: 'aboutController'
 			}). 
+			when('/category', {
+				templateUrl: 'views/category.html',
+				controller: 'categoryController'
+			}).
             when('/contactus', {
 				templateUrl: 'views/contactus.html',
 				controller: 'contactusController'
@@ -52,10 +56,6 @@ app.config(['$routeProvider',
 				templateUrl: 'views/bid.html',
 				controller: 'bidController'
 			}).
-			when('/closedProduct',{
-				templateUrl:'views/closedProduct',
-				controller: 'closedProduct'
-			}). 
 			when('/closedProduct', {
 				templateUrl: 'views/closedProduct.html',
 				controller: 'closedProduct'
@@ -125,6 +125,8 @@ app.controller('mainController',function(sessionService,$scope, $http){
 		            	$scope.userId = sessionService.get('userId');
 		            	$scope.username = sessionService.get('username');
 		            	$scope.login_error = sessionService.get('login_error');
+
+		            	console.log($scope.username);
 		        }
 		    });
       }

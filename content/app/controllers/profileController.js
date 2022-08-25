@@ -13,7 +13,7 @@ app.controller('profileController',function(sessionService,$scope,$http,$locatio
 	}
 
 	$scope.updateProfile = function() {
-		alert('anh');
+		
 		$http({
         url: URL + 'api/user/updateProfile.php?id='+$scope.userId,
         method: 'POST',

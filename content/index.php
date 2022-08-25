@@ -13,6 +13,31 @@ $sqlU = ("UPDATE products SET status = 1 where startDate > ?");
 $stmtU = $mysqli->prepare($sqlU);
 $stmtU->bind_param("s", $now);
 
+$sqlClosed = "SELECT productId from products WHERE status != -1 and endDate < '" . $now . "'";
+$resultClosed = $mysqli->query($sqlClosed);
+if($resultClosed->num_rows > 0) {
+    while($rowClosed = $resultClosed->fetch_assoc()) {
+        $sqlAuction = "SELECT auction.userId, productId, price, users.payment from auction
+        inner join user on auction.userId = users.userId
+         where productId = '" . $rowClosed["productId"] . "' order by price desc limit 1";
+        $resultAuction = $mysqli->query($sqlAuction);
+        if($resultAuction->num_rows > 0) {
+            $rowAuction = $resultAuction->fetch_assoc();
+            $sqlOrder = "INSERT into orderauction(userId, productId, payment, price, status) 
+                        values(?,?,?,?,?)";
+            $stmt = $mysqli->prepare($sqlOrder);
+            $stmt->bind_param("iisii", $userId, $productId, $payment, $price, $status);
+            $userId = $rowAuction["userId"];
+            $productId = $rowAuction["productId"];
+            $payment = $rowAuction["payment"];
+            $price = $rowAuction["price"];
+            $status = 0;
+
+            $stmt->execute();
+        }
+    }
+}
+
 $sqlC = ("UPDATE products SET status = -1 where endDate < ?");
 $stmtC = $mysqli->prepare($sqlC);
 $stmtC->bind_param("s", $now);

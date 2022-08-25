@@ -28,7 +28,7 @@ app.controller('productController', function($scope, $http){
       }).then(function(data){
         $(".modal").modal("hide");
           $scope.data = apiModifyTable($scope.data,data.data.ProductId,data.data);
-          console.log($scope.data);
+          
       });
     }
 

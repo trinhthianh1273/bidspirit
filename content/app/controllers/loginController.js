@@ -11,9 +11,12 @@ app.controller('loginController', function(sessionService,$scope,$http, $locatio
           }).then(function(res){
             $scope.ulogin = res.data;
             if($scope.ulogin.userId) {
-                $location.path('/home');
+                
+                    alert($scope.ulogin.login_msg);
+                    $location.path('/home');
+                
             } else {
-                console.log($scope.ulogin.login_msg);
+                alert($scope.ulogin.login_msg);
                 document.getElementById('login_error').style.display = 'block';
             }
           });

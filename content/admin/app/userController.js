@@ -20,36 +20,39 @@ app.controller('userController', function($scope, $http){
     }
 
     $scope.saveEdit = function(){
+      
       $http({
-        url: URL + 'api/admin/setOrder.php?id='+$scope.form.orderId,
+        url: URL + 'api/admin/setUser.php?id='+$scope.form.userId,
         method: 'POST',
         data: $scope.form
-      }).then(function(data){
-        $(".modal").modal("hide");
-          $scope.data = apiModifyTable($scope.data,data.data.userId,data.data);
+      }).then(function(res){
+          $(".modal").modal("hide");
+          $scope.data = apiModifyTable($scope.data,res.data.user.userId,res.data.user);
       });
     }
 
-    function checkAdd() {
-      $http({
-            url: URL + "api/admin/addUser.php",
-            method: 'GET'
-          }).then(function(res){
-            $scope.error = res.data.error;
-            $scope.success = res.data.success;
-          });
-    }
+
 
     $scope.add = function(){
+
       $http({
+
         url: URL + 'api/admin/addUser.php',
         method: 'POST',
         data: $scope.form
-      }).then(function(data){
-            $scope.user.push(data.data);
-            $(".modal").modal("hide");
+
+      }).then(function(res){
+        $scope.data = res.data;
+        $scope.msg = res.data.add_msg;
+
+        alert($scope.msg);
+        $scope.user.push(res.data.user);
+        $(".modal").modal("hide");
+
         
-      });
+        
+        })
+      
     }
 
 

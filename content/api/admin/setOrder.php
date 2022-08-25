@@ -10,7 +10,7 @@ $post = json_decode($post);
 $tracking = $post->tracking;
 $remark = $post->remark;
 $createDate = date("Y-m-d H:i:s");
-if($tracking == "Delivere") {
+if($tracking == "Delivered") {
     $status = 1;
 } else {
     $status = 0;
