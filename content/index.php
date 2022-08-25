@@ -1,3 +1,31 @@
+<?php 
+
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+require_once $_SERVER['DOCUMENT_ROOT'] . '/group2/content/DB_config.php';
+
+$now = date("Y-m-d H:i:s");
+
+$sqlL = ("UPDATE products SET status = 0 where startDate <= ? and ? <= endDate");
+$stmtL = $mysqli->prepare($sqlL);
+$stmtL->bind_param("ss", $now, $now);
+
+$sqlU = ("UPDATE products SET status = 1 where startDate > ?");
+$stmtU = $mysqli->prepare($sqlU);
+$stmtU->bind_param("s", $now);
+
+$sqlC = ("UPDATE products SET status = -1 where endDate < ?");
+$stmtC = $mysqli->prepare($sqlC);
+$stmtC->bind_param("s", $now);
+
+$stmtL->execute();
+$stmtC->execute();
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

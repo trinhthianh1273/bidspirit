@@ -45,8 +45,8 @@ app.controller('insertController',function(sessionService,$scope, $http, $locati
               data: fd,
               headers: {'Content-Type': undefined},
             }).then(function(response) { 
-              $scope.img = response.data;
-              console.log($scope.img.name[0]);
+              $scope.form.img = response.data;
+              
               
             });
 
@@ -58,9 +58,9 @@ app.controller('insertController',function(sessionService,$scope, $http, $locati
               
               $scope.response = response.data;
               console.log($scope.response);
+              document.getElementById('insertForm').reset();
             });
 
-        document.getElementById('insertForm').reset();
     }
 
     

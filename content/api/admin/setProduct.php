@@ -13,9 +13,9 @@ $basePrice = $post->basePrice;
 $status = $post->status;
 $updateDate = date("Y-m-d H:i:s");
 
-$sql = ("UPDATE products SET productname = ?, description = ?, basePrice = ?, status = ?, updateDate = ?");
+$sql = ("UPDATE products SET productname = ?, description = ?, basePrice = ?, status = ?, updateDate = ? where productId = ?");
 $stmt = $mysqli->prepare($sql);
-$stmt->bind_param("ssiis", $productname, $description, $basePrice, $status, $updateDate);
+$stmt->bind_param("ssiisi", $productname, $description, $basePrice, $status, $updateDate, $id);
 
 if($productname!=null && $description!=null && $basePrice!=null && $status!=null) {
 	$stmt->execute();

@@ -7,7 +7,6 @@ app.controller('productController', function($scope, $http){
             method: 'GET'
           }).then(function(res){
             $scope.product = res.data.product;
-            console.log($scope.product);
           });
     }
 
@@ -17,13 +16,13 @@ app.controller('productController', function($scope, $http){
         method: 'GET'
       }).then(function(data){
         $scope.form = data.data;
-        console.log($scope.form);
       });
     }
 
     $scope.saveEdit = function(){
+      alert($scope.form.productId);
       $http({
-        url: URL + 'api/admin/setProduct.php?id='+$scope.form.productId,
+        url: URL + 'api/admin/setProduct.php?id='+ $scope.form.productId,
         method: 'POST',
         data: $scope.form
       }).then(function(data){

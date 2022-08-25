@@ -125,7 +125,6 @@ app.controller('mainController',function(sessionService,$scope, $http){
 		            	$scope.userId = sessionService.get('userId');
 		            	$scope.username = sessionService.get('username');
 		            	$scope.login_error = sessionService.get('login_error');
-		            	console.log($scope.username, $scope.userId);
 		        }
 		    });
       }
