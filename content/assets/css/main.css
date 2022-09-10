@@ -92,10 +92,20 @@ a:hover {
         color:var(--orange-bc);
 }
 
-.contact, .category .col-3 {
+.contact .col-3 {
     background-color: var(--step-c);
     color: var(--extra-ac);
     border-radius: 7px;
+}
+
+.category .col-3 {
+    background-color: var(--step-c);
+    color: var(--extra-ac);
+    border-radius: 7px;
+}
+
+.category h3 {
+    color: var(--orange-c);
 }
 
 /* ------- DROPDOWN ACCOUNT --------------- */

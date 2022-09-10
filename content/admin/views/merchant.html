@@ -51,7 +51,9 @@
 
                     <div class="col-6 form-group mb-3">
                       <label for="type"><strong>Type</strong></label>
-                      <input ng-model="form.type" class="form-controller" name="type"placeholder="Type" required>
+                      <select ng-model="form.type" ng-options="x for x in type" name="type" required="required" style="width:100%;height:150%;">
+                      </select>
+                      <!-- <input ng-model="form.type" class="form-controller" name="type"placeholder="Type" required> -->
                     </div>
 
                   <!-- Zip Code -->

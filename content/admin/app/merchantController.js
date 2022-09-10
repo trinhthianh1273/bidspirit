@@ -32,6 +32,7 @@ app.controller('merchantController', function($scope, $http){
     }
 
 
+    $scope.type = ["personal", "company"];
     $scope.add = function(){
       $http({
         url: URL + 'api/admin/addMerchant.php',

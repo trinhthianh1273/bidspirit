@@ -8,10 +8,6 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/changepassword.html',
             controller: 'changepasswordController'
         })
-        .when('/order', {
-            templateUrl: 'views/order.html',
-            controller: 'orderController'
-        })
         .when('/user', {
             templateUrl: 'views/user.html',
             controller: 'userController'
