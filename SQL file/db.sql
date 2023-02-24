@@ -147,10 +147,10 @@ add FOREIGN KEY (userId) references users(userId),
 add FOREIGN KEY (productId) references products(productId);
 
 insert into auction (`userId`, `productId`, `price`, `status`) VALUES
-(1, 5, 200, 1),
+(1, 5, 200, 0),
 (1, 6, 500, 1),
 (1, 7, 250, 1),
-(1, 12, 300, 1);
+(1, 12, 300, 0);
 
 
 

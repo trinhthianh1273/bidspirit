@@ -1,7 +1,7 @@
 app.controller('registerController', function($scope,$http, $location){
     
     function checkpass(pass, cpass) {
-        if(pass === cpass) {
+        if(pass == cpass) {
             return true;
         } else {
             return false;
@@ -16,6 +16,7 @@ app.controller('registerController', function($scope,$http, $location){
                 method: 'POST',
                 data: $scope.form
               }).then(function(data){
+                    console.log('');
                     $scope.data = data.data;
                     if($scope.data.register_msg == "Register Successfully") {
                         alert($scope.data.register_msg);

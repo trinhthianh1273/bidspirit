@@ -83,30 +83,3 @@ app.controller('bidController', function(sessionService,$scope, $http, $location
 	  }
 })
 
-/*
-function($) {
-	"use strict";
-
-	var selector = '#bid_counter1';
-
-            if ($(selector).length) {
-                // If you need specific date then comment out 1 and comment in 2
-                // let endDate = "2021/05/20"; //comment out this 1
-                let endDate = $(selector).text(); //comment out this 1
-                // let endDate = (new Date().getFullYear()) + '/' + (new Date().getMonth() + 1) + '/' + (new Date().getDate() + 1); // comment in this 2
-                let counterElement = document.querySelector(selector);
-                let myCountDown = new ysCountDown(endDate, function (remaining, finished) {
-                    let message = "";
-                    if (finished) {
-                        message = "Expired";
-                    } else {
-                        var re_hours = (remaining.totalDays * 24) + remaining.hours;
-                        message += re_hours + " : ";
-                        message += remaining.minutes + " : ";
-                        message += remaining.seconds;
-                    }
-                    counterElement.textContent = message;
-                });
-            }
-}
-*/
